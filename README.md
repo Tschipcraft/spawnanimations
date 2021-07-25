@@ -16,7 +16,7 @@ If you want to exclude an entity you can use the tag "exclude" or edit the JSON 
 
 ## Installation
 
-Download the latest release from [here](latest) and put the datapack zip file into the `datapacks` folder of your Minecraft world.
+Download the latest release from [here](releases/latest) and put the datapack zip file into the `datapacks` folder of your Minecraft world.
 
 
 ## Updates
