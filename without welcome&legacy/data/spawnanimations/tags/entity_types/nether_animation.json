@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:wither_skeleton",
+    "minecraft:magma_cube",
+    "minecraft:hoglin",
+    "minecraft:zombified_piglin",
+    "minecraft:strider"
+  ]
+}
