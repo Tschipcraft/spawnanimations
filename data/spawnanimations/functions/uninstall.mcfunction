@@ -15,5 +15,7 @@ kill @e[tag=s_a_p]
 
 datapack disable "file/spawnanimations.zip"
 datapack disable "file/spawnanimations"
+datapack disable "file/spawnanimations-v1.8-mc1.18-datapack.zip"
+
 
 say Uninstalled by @s!
