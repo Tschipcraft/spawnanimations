@@ -12,7 +12,7 @@ Zombies, Zombie Villagers, Husks, Drowned, Skeletons, Strays, Spiders, Cave Spid
 
 This pack does not affect vanilla gameplay, since the entities that have not yet come out of the ground are only invisible and silent.
 
-If you want to exclude an entity you can use the tag "exclude" or edit the JSON files located in spawnanimations/data/spawnanimations/tags/entity_types/...
+If you want to exclude an entity you can use the tag "exclude" or edit the JSON files located in spawnanimations/data/spawnanimations/tags/entity_types/... to even include mobs
 
 
 ## Installation
