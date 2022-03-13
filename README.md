@@ -19,6 +19,7 @@ If you want to exclude an entity you can use the tag "exclude" or edit the JSON 
 
 Download the latest release from [here](https://github.com/Tschipcraft/spawnanimations/releases/latest) and put the datapack zip file into the `datapacks` folder of your Minecraft world.
 
+For Minecraft 1.14 and 1.15 use [this legacy version](https://drive.google.com/drive/folders/1ZqSrTNOId5AkeTsgW1LpFpMiGEq22aqE?usp=sharing)
 
 ## Updates
 
