@@ -1,7 +1,13 @@
-# Spawn Animations
+<h1 align="center">
+  <img src="/pack.png" width="64" height="64"><br/>
+  Spawn Animations
+</h1>
+<p align="center">
+  <a href="https://github.com/Tschipcraft/spawnanimations/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/spawnanimations?colorA=191700&colorB=e3e1ce&style=for-the-badge"></a>
+  <a href="https://github.com/Tschipcraft/spawnanimations/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/spawnanimations/total?logo=github&colorA=191700&colorB=e3e1ce&style=for-the-badge"></a>
+</p>
 
-![icon](pack.png)
-> A data pack for 1.14x-1.18x
+> A data pack for 1.14x-1.19x
 
 ## Features
 
@@ -19,7 +25,7 @@ If you want to exclude an entity you can use the tag "exclude" or edit the JSON 
 
 Download the latest release from [here](https://github.com/Tschipcraft/spawnanimations/releases/latest) and put the datapack zip file into the `datapacks` folder of your Minecraft world.
 
-For Minecraft 1.14 and 1.15 use [this legacy version](https://drive.google.com/drive/folders/1ZqSrTNOId5AkeTsgW1LpFpMiGEq22aqE?usp=sharing)
+For Minecraft 1.14 and 1.15 use [this legacy version](https://github.com/Tschipcraft/spawnanimations/other_editions)
 
 ## Updates
 

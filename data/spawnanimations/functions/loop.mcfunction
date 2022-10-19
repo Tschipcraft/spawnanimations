@@ -1,10 +1,10 @@
 ## by Tschipcraft
 
-
 ## General
 effect give @e[tag=to_spa_a_verify] invisibility 1 0 true
 execute store result score Global spa_a_count if entity @e[type=minecraft:area_effect_cloud,tag=s_a_p]
-# welcome & Menu
+
+# Welcome & Menu
 scoreboard players add @a spa_a_welcome 0
 scoreboard players enable @a menu
 execute as @a[scores={menu=1..60,spa_a_welcome=1}] run scoreboard players set @s spa_a_welcome 0
