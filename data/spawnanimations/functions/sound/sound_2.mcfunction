@@ -19,6 +19,8 @@ execute if block ~ ~-1 ~ minecraft:hay_block run playsound minecraft:block.grass
 execute if block ~ ~-1 ~ #minecraft:wool run playsound minecraft:block.wool.break block @a ~ ~ ~ 1 0.9
 execute if block ~ ~-1 ~ minecraft:snow run playsound minecraft:block.snow.break block @a ~ ~ ~ 1 0.9
 execute if block ~ ~-1 ~ #minecraft:ice run playsound minecraft:block.glass.break block @a ~ ~ ~ 1 0.9
+execute if block ~ ~-1 ~ minecraft:obsidian run playsound minecraft:block.stone.break block @a ~ ~ ~ 1 0.6
+execute if block ~ ~-1 ~ minecraft:slime_block run playsound minecraft:block.slime_block.break block @a ~ ~ ~ 1 0.6
 
 # End
 execute if block ~ ~-1 ~ minecraft:end_stone run playsound minecraft:block.stone.break block @a ~ ~ ~ 1 0.9

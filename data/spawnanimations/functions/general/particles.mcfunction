@@ -29,6 +29,8 @@ execute if block ~ ~-1 ~ #minecraft:wool run particle minecraft:block minecraft:
 execute if block ~ ~-1 ~ gravel run particle minecraft:block gravel ~ ~ ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~-1 ~ snow run particle minecraft:block snow ~ ~-0.7 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~-1 ~ #minecraft:ice run particle minecraft:block ice ~ ~ ~ 0.1 0 0.1 1 9 normal
+execute if block ~ ~-1 ~ minecraft:obsidian run particle minecraft:block obsidian ~ ~ ~ 0.1 0 0.1 1 9 normal
+execute if block ~ ~-1 ~ minecraft:slime_block run particle minecraft:block slime_block ~ ~ ~ 0.1 0 0.1 1 9 normal
 
 # End
 execute if block ~ ~-1 ~ end_stone run particle minecraft:block end_stone ~ ~ ~ 0.1 0 0.1 1 9 normal
