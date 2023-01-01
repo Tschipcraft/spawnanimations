@@ -25,8 +25,30 @@ If you want to exclude an entity you can use the tag "exclude" or edit the JSON 
 
 Download the latest release from [here](https://github.com/Tschipcraft/spawnanimations/releases/latest) and put the datapack zip file into the `datapacks` folder of your Minecraft world.
 
-For Minecraft 1.14 and 1.15 use [this legacy version](https://github.com/Tschipcraft/spawnanimations/tree/master/other_editions)
+For Minecraft 1.14 and 1.15 use [this legacy edition](https://github.com/Tschipcraft/spawnanimations/tree/master/other_editions).
+
+Now also available on Modrinth!
+
+<a href="https://datapacks-pre-product.modrinth.com/datapack/spawn-animations">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/modrinth/art/blob/main/Branding/Badge/badge-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/modrinth/art/blob/main/Branding/Badge/badge-light.svg">
+  <img alt="Download on Modrinth" src="https://github.com/modrinth/art/blob/main/Branding/Badge/badge-dark.svg">
+</picture>
+</a>
 
 ## Updates
 
 To check for updates use `/trigger menu` and hit the Check for Updates button. There is also a **Reset** and an **Uninstall** button.
+
+## Compatibility
+
+Data packs are usually pretty compatible with newer versions of the game. This data pack however also features a version checker which notifies you, if you are playing with an (to the data pack) unknown version. If the data pack works fine and I'm just too lazy to update it in time, you can turn it off with the command `/scoreboard players set tvc_ignore global 1`
+
+## Demo Gifs
+
+<details>
+<summary>Click to expand</summary>
+<img src="https://i.imgur.com/X8A0UY9.gif" width=55%>
+<img src="https://i.imgur.com/0rLJakI.gif" width=55%>
+</details>
