@@ -4,6 +4,7 @@
 </h1>
 <p align="center">
   <a href="https://github.com/Tschipcraft/spawnanimations/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/spawnanimations?colorA=191700&colorB=e3e1ce&style=for-the-badge"></a>
+  <a href="https://datapacks-pre-product.modrinth.com/datapack/spawn-animations"><img src="https://img.shields.io/modrinth/dt/spawn-animations?label=Modrinth&colorA=191700&colorB=e3e1ce&style=for-the-badge&logo=modrinth"></a>
   <a href="https://github.com/Tschipcraft/spawnanimations/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/spawnanimations/total?logo=github&colorA=191700&colorB=e3e1ce&style=for-the-badge"></a>
 </p>
 
