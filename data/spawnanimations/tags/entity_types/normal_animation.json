@@ -11,11 +11,9 @@
     "minecraft:cave_spider",
     "minecraft:creeper",
     "minecraft:witch",
-    "minecraft:vex",
     "minecraft:pillager",
     "minecraft:evoker",
     "minecraft:vindicator",
-    "minecraft:illusioner",
-    "minecraft:slime"
+    "minecraft:illusioner"
   ]
 }

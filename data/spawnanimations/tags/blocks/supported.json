@@ -8,18 +8,18 @@
 		"#minecraft:logs",
 		"#minecraft:leaves",
 		"#minecraft:stone_bricks",
-    "#minecraft:base_stone_overworld",
+		"#minecraft:base_stone_overworld",
 		"minecraft:cobblestone",
 		"minecraft:hay_block",
-		"#minecraft:wool",
-    "minecraft:gravel",
+		"minecraft:gravel",
 		"minecraft:snow",
-    "#minecraft:ice",
+		"#minecraft:ice",
 		"minecraft:obsidian",
 		"minecraft:slime_block",
+		"minecraft:nether_bricks",
 		"minecraft:end_stone",
 		"#minecraft:nylium",
-    "#minecraft:base_stone_nether",
+		"#minecraft:base_stone_nether",
 		"#minecraft:soul_fire_base_blocks"
 	]
 }

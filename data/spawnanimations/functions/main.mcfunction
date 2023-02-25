@@ -16,8 +16,6 @@ execute as @e[type=minecraft:giant,tag=!spa_a_verify,tag=!spa_a_verified,tag=!to
 
 
 ## Animation trigger
-#execute if score Global spa_a_count matches ..100 as @a[gamemode=!spectator] at @s as @e[type=!area_effect_cloud,tag=to_spa_a_verify,distance=..20,limit=1,sort=arbitrary] at @s run function spawnanimations:general/verify
-
 execute if score Global spa_a_count matches ..100 as @a[gamemode=!spectator,sort=random,limit=5] at @s run function spawnanimations:general/run_activation_batch
 
 
