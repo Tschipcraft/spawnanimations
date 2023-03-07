@@ -1,17 +1,17 @@
 ## by Tschipcraft
 
-scoreboard objectives remove spa_a_timer
-scoreboard objectives remove spa_a_count
-scoreboard objectives remove spa_a_welcome
-scoreboard objectives remove spa_a_how_to_use
+scoreboard objectives remove ts.sa.timer
+scoreboard objectives remove ts.sa.count
+scoreboard objectives remove ts.sa.welcome
+scoreboard objectives remove ts.sa.how_to_use
 
-scoreboard objectives remove x
-scoreboard objectives remove y
-scoreboard objectives remove z
+scoreboard objectives remove ts.sa.x
+scoreboard objectives remove ts.sa.y
+scoreboard objectives remove ts.sa.z
 
-scoreboard objectives remove spa_settings
+scoreboard objectives remove ts.sa.settings
 
-scoreboard objectives remove menu
+scoreboard objectives remove tschipcraft.menu
 
 # Call the reset function
 function spawnanimations:reset

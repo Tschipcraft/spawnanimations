@@ -1,4 +1,4 @@
 ##by Tschipcraft
 
-scoreboard players set spa_mode spa_settings 1
+scoreboard players set ts.sa.mode ts.sa.settings 1
 function spawnanimations:settings/core
