@@ -1,26 +1,38 @@
 ## by Tschipcraft
 
-# To edit mobs that are affected, see ../tags/entity_types/normal_animation.json
+## Finish initalise
+execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.initalise] run function spawnanimations:internal/animation/dig_up/initalise_end
+
+## Detect new mobs
+# To edit mobs that are affected, see ../tags/entity_types/dig_up_animation.json
 # Normal
-execute as @e[type=#spawnanimations:normal_animation,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!ignore.global,limit=10,sort=arbitrary] run function spawnanimations:general/initalise
-
-# Nether
-execute as @e[type=#spawnanimations:nether_animation,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!ignore.global,limit=7,sort=arbitrary] run function spawnanimations:general/initalise_nether
-
-# End
-execute as @e[type=#spawnanimations:end_animation,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!ignore.global,limit=7,sort=arbitrary] run function spawnanimations:general/initalise_end
+execute if score $version ts.sa.settings matches 2587.. as @e[type=#spawnanimations:dig_up_animation,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!ignore.global,limit=10,sort=arbitrary] run function spawnanimations:internal/animation/dig_up/prepare
 
 # Giant
-execute as @e[type=minecraft:giant,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!ignore.global,limit=2] run function spawnanimations:general/initalise
-
+#execute if score $version ts.sa.settings matches 2587.. as @e[type=minecraft:giant,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!ignore.global,limit=2] run function spawnanimations:internal/animation/dig_up/prepare
 
 
 ## Animation trigger
-execute if score $global ts.sa.count matches ..100 as @a[gamemode=!spectator,sort=random,limit=5] at @s run function spawnanimations:general/run_activation_batch
+# Player nearby
+execute if score $global ts.sa.count matches ..100 as @a[gamemode=!spectator,sort=random,limit=5] at @s run function spawnanimations:internal/run_activation_batch
+# Exclusion criteria
+execute if score $global ts.sa.count matches ..100 as @e[type=!#spawnanimations:exclude,predicate=spawnanimations:trigger,tag=ts.sa.to_verify,limit=10,sort=random] at @s run function spawnanimations:internal/animation/dig_up/start
 
 
-## Animation
-execute as @e[tag=ts.sa.verify,tag=!smithed.strict,tag=!ignore.global] at @s run function spawnanimations:general/core
+## Tick dig up animation
+execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.verify,tag=!smithed.strict,tag=!ignore.global] at @s run function spawnanimations:internal/animation/dig_up/core
 
-## Particles
-execute as @e[type=minecraft:area_effect_cloud,tag=ts.sa.particles,tag=!smithed.strict,tag=!ignore.global] at @s run function spawnanimations:general/particles
+
+## Special Animations
+# - see you in v2.0
+
+
+## Remove problematic items
+execute as @e[type=minecraft:item,tag=!ts.sa.i.checked] run function spawnanimations:internal/hidden/remove_item/check
+
+
+## Menu
+execute as @a[scores={tschipcraft.menu=1..}] run scoreboard players set @s ts.sa.welcome 0
+execute as @a[scores={ts.sa.welcome=0}] run function #spawnanimations:welcome
+
+execute as @a[scores={tschipcraft.menu=1..}] run schedule function spawnanimations:messages/menu_reset 1t

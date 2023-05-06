@@ -1,0 +1,26 @@
+{
+  "//comment": "A new entity that matches any of these predicates upon spawning will be excluded from Spawn Animations",
+  "condition": "minecraft:alternative",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:has_effect"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:has_invisibility"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:is_on_fire"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:is_riding"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:has_passengers"
+    }
+  ]
+}

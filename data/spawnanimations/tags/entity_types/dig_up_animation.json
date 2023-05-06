@@ -1,0 +1,22 @@
+{
+  "//comment": "Entities specified here will dig themselves up when a player is near or other exclusion criterias are met. You can add your own entities here",
+  "replace": false,
+  "values": [
+    "minecraft:zombie",
+    "minecraft:husk",
+    "minecraft:drowned",
+    "minecraft:skeleton",
+    "minecraft:stray",
+    "minecraft:spider",
+    "minecraft:cave_spider",
+    "minecraft:creeper",
+    "minecraft:wither_skeleton",
+    "minecraft:hoglin",
+    "minecraft:zombified_piglin",
+    "minecraft:strider",
+    "minecraft:enderman",
+    "minecraft:giant",
+    "minecraft:magma_cube",
+    "minecraft:slime"
+  ]
+}

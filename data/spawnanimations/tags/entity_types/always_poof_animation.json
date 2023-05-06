@@ -1,9 +1,9 @@
 {
+  "//comment": "Entities specified here will always play the poof animation. Adding entities here that are not specified in dig_up_animation.json won't have any effect",
   "replace": false,
   "values": [
-    "minecraft:magma_cube",
-    "minecraft:slime",
     "minecraft:vex",
-    {"id": "minecraft:allay", "required": false}
+    "minecraft:slime",
+    "minecraft:magma_cube"
   ]
 }

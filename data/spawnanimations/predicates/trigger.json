@@ -1,0 +1,18 @@
+{
+  "//comment": "A entity that suddenly matches any of these predicates will play the animation",
+  "condition": "minecraft:alternative",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:has_effect"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:is_on_fire"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:attacking"
+    }
+  ]
+}

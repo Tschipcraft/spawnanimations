@@ -1,0 +1,32 @@
+{
+  "//comment": "This predicate checks if an entity has an effect that could impair Spawn Animations",
+  "condition": "minecraft:alternative",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "effects": {
+          "minecraft:glowing": {
+            "duration": {
+              "min": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "effects": {
+          "minecraft:levitation": {
+            "duration": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}

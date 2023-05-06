@@ -6,8 +6,8 @@
 		"minecraft:void_air",
 		"minecraft:barrier",
     	"minecraft:structure_void",
-		"minecraft:light",
+		{"id": "minecraft:light", "required": false},
 		"minecraft:water",
-		"minecraft:lava"
+		"minecraft:snow"
 	]
 }
