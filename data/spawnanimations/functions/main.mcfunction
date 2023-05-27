@@ -6,10 +6,7 @@ execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.initalise] run function s
 ## Detect new mobs
 # To edit mobs that are affected, see ../tags/entity_types/dig_up_animation.json
 # Normal
-execute if score $version ts.sa.settings matches 2587.. as @e[type=#spawnanimations:dig_up_animation,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!ignore.global,limit=10,sort=arbitrary] run function spawnanimations:internal/animation/dig_up/prepare
-
-# Giant
-#execute if score $version ts.sa.settings matches 2587.. as @e[type=minecraft:giant,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!ignore.global,limit=2] run function spawnanimations:internal/animation/dig_up/prepare
+execute if score $version ts.sa.settings matches 2587.. as @e[type=#spawnanimations:dig_up_animation,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!exclude,tag=!smithed.strict,tag=!smithed.block,tag=!global.ignore,tag=!global.ignore.pos,limit=10,sort=arbitrary] run function spawnanimations:internal/animation/dig_up/prepare
 
 
 ## Animation trigger
@@ -28,7 +25,7 @@ execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.verify,tag=!smithed.stric
 
 
 ## Remove problematic items
-execute as @e[type=minecraft:item,tag=!ts.sa.i.checked] run function spawnanimations:internal/hidden/remove_item/check
+execute as @e[type=minecraft:item,tag=!ts.sa.i.checked,tag=!global.ignore] run function spawnanimations:internal/hidden/remove_item/check
 
 
 ## Menu

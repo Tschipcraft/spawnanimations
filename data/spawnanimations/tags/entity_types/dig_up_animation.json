@@ -1,5 +1,5 @@
 {
-  "//comment": "Entities specified here will dig themselves up when a player is near or other exclusion criterias are met. You can add your own entities here",
+  "//comment": "Entities specified here will dig themselves up when a player is near or other exclusion criteria are met. You can add your own entities here",
   "replace": false,
   "values": [
     "minecraft:zombie",
