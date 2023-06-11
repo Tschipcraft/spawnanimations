@@ -13,7 +13,7 @@ execute if score $version ts.sa.settings matches 2587.. as @e[type=#spawnanimati
 # Player nearby
 execute if score $global ts.sa.count matches ..100 as @a[gamemode=!spectator,sort=random,limit=5] at @s run function spawnanimations:internal/run_activation_batch
 # Exclusion criteria
-execute if score $global ts.sa.count matches ..100 as @e[type=!#spawnanimations:exclude,predicate=spawnanimations:trigger,tag=ts.sa.to_verify,limit=10,sort=random] at @s run function spawnanimations:internal/animation/dig_up/start
+execute if score $global ts.sa.count matches ..100 as @e[type=!#spawnanimations:exclude,predicate=!spawnanimations:trigger,tag=ts.sa.to_verify,limit=10,sort=random] at @s run function spawnanimations:internal/animation/dig_up/start
 
 
 ## Tick dig up animation

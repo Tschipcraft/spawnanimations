@@ -16,20 +16,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.5.3
       - name: Extract tag
         id: tag_version
-        run: echo ::set-output name=TAG_VERSION::${GITHUB_REF#refs/tags/}
+        run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
       # Check for existence of datapack and/or resourcepack folders.
       - name: Check for data folder
         id: check_datapack_folder
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2
         with:
           files: "data"
       - name: Check for assets folder
         id: check_assets_folder
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2
         with:
           files: "assets"
 
