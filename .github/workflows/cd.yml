@@ -3,9 +3,13 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'version of the data pack'
+        description: 'Version of the data pack'
         required: true
         default: 'v1.0'
+      mc_version:
+        description: 'Minecraft version(s) the data pack runs in'
+        required: true
+        default: '1.20'
 
 jobs:
   create_data_pack:
@@ -16,9 +20,6 @@ jobs:
       - name: Extract tag
         id: tag_version
         run: echo ::set-output name=TAG_VERSION::${GITHUB_REF#refs/tags/}
-      - name: Extract MC verson
-        id: mc_version
-        run: sh .github/workflows/get-mc-version.sh
 
       # Check for existence of datapack and/or resourcepack folders.
       - name: Check for data folder
@@ -62,7 +63,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./assetpack.zip
-          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ steps.mc_version.outputs.MC_VERSION }}-resourcepack.zip
+          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip
           asset_content_type: application/zip
       - name: Upload datapack release asset
         uses: actions/upload-release-asset@v1
@@ -72,5 +73,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./datapack.zip
-          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ steps.mc_version.outputs.MC_VERSION }}-datapack.zip
+          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
           asset_content_type: application/zip
