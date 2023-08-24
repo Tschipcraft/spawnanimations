@@ -22,8 +22,8 @@ scoreboard players operation @s ts.sa.x += @s ts.sa.y
 scoreboard players operation @s ts.sa.x += @s ts.sa.z
 
 # Test
-execute if score @s ts.sa.x <= ts.sa.distance ts.sa.settings as @s[type=!#spawnanimations:always_poof_animation] run function spawnanimations:internal/animation/dig_up/start
-execute if score @s ts.sa.x <= ts.sa.distance ts.sa.settings as @s[type=#spawnanimations:always_poof_animation] run function spawnanimations:internal/animation/dig_up/verify_in_air
+execute if score @s ts.sa.x <= $activation_dist ts.sa.settings as @s[type=!#spawnanimations:always_poof_animation] run function spawnanimations:internal/animation/dig_up/start
+execute if score @s ts.sa.x <= $activation_dist ts.sa.settings as @s[type=#spawnanimations:always_poof_animation] run function spawnanimations:internal/animation/dig_up/verify_in_air
 
 
-execute if score ts.sa.mode ts.sa.settings matches 0 if score @s ts.sa.x > ts.sa.distance ts.sa.settings run function spawnanimations:internal/animation/dig_up/verify_in_air
+execute if score $activation_mode ts.sa.settings matches -1..0 if score @s ts.sa.x > $activation_dist ts.sa.settings run function spawnanimations:internal/animation/dig_up/verify_in_air

@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/pack.png" width="64" height="64"><br/>
+  <img src="pack.png" width="95" height="95" style="image-rendering: pixelated"><br/>
   Spawn Animations
 </h1>
 <p align="center">
@@ -38,17 +38,21 @@ Download the latest release from [here](https://github.com/Tschipcraft/spawnanim
 
 For Minecraft 1.14, 1.15 and 1.16 use [a legacy edition](https://github.com/Tschipcraft/spawnanimations/tree/master/other_editions).
 
-Also available on Modrinth and CurseForge even packaged as a mod!
+Also available on Modrinth and CurseForge!
 
 <a href="https://modrinth.com/datapack/spawn-animations">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-light.svg">
-  <img alt="Download on Modrinth" src="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-dark.svg">
+  <source height="72px" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/modrinth-badge-dark.svg">
+  <source height="72px" media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/modrinth-badge-light.svg">
+  <img height="72px" alt="Download on Modrinth" src="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-dark.svg">
 </picture>
 </a>
 <a href="https://www.curseforge.com/minecraft/texture-packs/spawn-animations">
-<img alt="Download on CurseForge" src="https://i.imgur.com/zcIcoGb.png">
+<picture>
+  <source height="72px" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/curseforge-badge-dark.svg">
+  <source height="72px" media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/curseforge-badge-light.svg">
+  <img height="72px" alt="Download on CurseForge" src="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/curseforge-badge-dark.svg">
+</picture>
 </a>
 
 ## Manage

@@ -35,7 +35,7 @@ data remove storage spawnanimations:temp ArmorItems
 # Disable data pack
 datapack disable "file/spawnanimations.zip"
 datapack disable "file/spawnanimations"
-datapack disable "file/spawnanimations-v1.9-mc1.19.4-datapack.zip"
+datapack disable "file/${file_name}"
 
 
 say Spawn Animations by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.

@@ -25,7 +25,7 @@ execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.verify,tag=!smithed.stric
 
 
 ## Remove problematic items
-execute as @e[type=minecraft:item,tag=!ts.sa.i.checked,tag=!global.ignore] run function spawnanimations:internal/hidden/remove_item/check
+execute as @e[type=minecraft:item,tag=!ts.sa.i.checked,tag=!global.ignore] run function spawnanimations:internal/hidden/remove_invalid_item/check
 
 
 ## Menu

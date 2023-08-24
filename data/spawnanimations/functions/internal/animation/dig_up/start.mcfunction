@@ -10,7 +10,7 @@ scoreboard players set @s ts.sa.e.stage 0
 scoreboard players set @s ts.sa.timer -300
 function spawnanimations:internal/animation/dig_up/get_animation_speed
 
-# Save info
+# Save position and current state of the Invulnerable NBT tag
 execute store result score @s ts.sa.e.y run data get entity @s Pos[1] 100
 execute store result score @s ts.sa.e.Inv run data get entity @s Invulnerable
 execute if score @s ts.sa.e.Inv matches 0 run data merge entity @s {Invulnerable:1b}

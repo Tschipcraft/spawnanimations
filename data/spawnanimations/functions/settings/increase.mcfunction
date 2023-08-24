@@ -1,4 +1,4 @@
 ##by Tschipcraft
 
-scoreboard players add ts.sa.distance ts.sa.settings 1
+scoreboard players add $activation_dist ts.sa.settings 1
 function #spawnanimations:settings

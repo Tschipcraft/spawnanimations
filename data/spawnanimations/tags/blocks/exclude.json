@@ -1,13 +1,13 @@
 {
-	"replace": false,
-	"values": [
-		"minecraft:air",
-		"minecraft:cave_air",
-		"minecraft:void_air",
-		"minecraft:barrier",
-    	"minecraft:structure_void",
-		{"id": "minecraft:light", "required": false},
-		"minecraft:water",
-		"minecraft:snow"
-	]
+  "replace": false,
+  "values": [
+    "minecraft:air",
+    "minecraft:cave_air",
+    "minecraft:void_air",
+    "minecraft:barrier",
+    "minecraft:structure_void",
+    {"id": "minecraft:light", "required": false},
+    "minecraft:water",
+    "minecraft:snow"
+  ]
 }

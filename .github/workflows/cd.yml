@@ -5,7 +5,7 @@ on:
       tag:
         description: 'Version of the data pack'
         required: true
-        default: 'v1.0'
+        default: '1.0'
       mc_version:
         description: 'Minecraft version(s) the data pack runs in'
         required: true
@@ -20,6 +20,13 @@ jobs:
       - name: Extract tag
         id: tag_version
         run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+      - name: Find and Replace uninstall file name
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${file_name}"
+          replace: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
+          regex: false
+          include: "**uninstall.mcfunction"
 
       # Check for existence of datapack and/or resourcepack folders.
       - name: Check for data folder
