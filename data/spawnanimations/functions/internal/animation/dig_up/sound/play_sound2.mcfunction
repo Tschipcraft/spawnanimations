@@ -21,14 +21,22 @@ execute if block ~ ~ ~ minecraft:snow run playsound minecraft:block.snow.break b
 execute if block ~ ~ ~ #minecraft:ice run playsound minecraft:block.glass.break block @a ~ ~ ~ 1 0.9
 execute if block ~ ~ ~ minecraft:obsidian run playsound minecraft:block.stone.break block @a ~ ~ ~ 1 0.6
 execute if block ~ ~ ~ minecraft:slime_block run playsound minecraft:block.slime_block.break block @a ~ ~ ~ 1 0.6
-execute if block ~ ~ ~ minecraft:nether_bricks run playsound minecraft:block.nether_bricks.break block @a ~ ~ ~ 1 0.9
 
 # End
 execute if block ~ ~ ~ minecraft:end_stone run playsound minecraft:block.stone.break block @a ~ ~ ~ 1 0.9
 
 # Nether
 execute if block ~ ~ ~ #minecraft:base_stone_nether run playsound minecraft:block.netherrack.break block @a ~ ~ ~ 1 0.9
+execute if block ~ ~ ~ minecraft:nether_bricks run playsound minecraft:block.nether_bricks.break block @a ~ ~ ~ 1 0.9
 execute if block ~ ~ ~ #minecraft:nylium run playsound minecraft:block.wart_block.break block @a ~ ~ ~ 1 0.9
 execute if block ~ ~ ~ #minecraft:soul_fire_base_blocks run playsound minecraft:block.soul_sand.break block @a ~ ~ ~ 1 0.9
+
+# Containers
+execute if block ~ ~ ~ minecraft:chest run playsound minecraft:block.wood.break block @a ~ ~ ~ 1 0.9
+execute if block ~ ~ ~ minecraft:trapped_chest run playsound minecraft:block.wood.break block @a ~ ~ ~ 1 0.9
+execute if block ~ ~ ~ minecraft:ender_chest run playsound minecraft:block.ender_chest.open block @a ~ ~ ~ 1 0.6
+execute if block ~ ~ ~ minecraft:hopper run playsound minecraft:block.metal.break block @a ~ ~ ~ 1 0.9
+execute if block ~ ~ ~ minecraft:beacon run playsound minecraft:block.glass.break block @a ~ ~ ~ 1 0.6
+
 
 execute if block ~ ~ ~ minecraft:lava run playsound minecraft:block.lava.pop block @a ~ ~ ~ 1 0.9

@@ -41,12 +41,12 @@ jobs:
           files: "assets"
 
       - name: Create data pack zip file
-        uses: montudor/action-zip@v0.1.0
+        uses: montudor/action-zip@v1
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
         with:
           args: zip -qq datapack.zip -r data pack.mcmeta pack.png LICENSE README.md
       - name: Create asset pack zip file
-        uses: montudor/action-zip@v0.1.0
+        uses: montudor/action-zip@v1
         if: steps.check_assets_folder.outputs.files_exists == 'true'
         with:
           args: zip -qq assetpack.zip -r assets pack.mcmeta pack.png LICENSE README.md
