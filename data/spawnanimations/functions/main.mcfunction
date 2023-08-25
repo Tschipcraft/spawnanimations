@@ -31,5 +31,7 @@ execute as @e[type=minecraft:item,tag=!ts.sa.i.checked,tag=!global.ignore] run f
 ## Menu
 execute as @a[scores={tschipcraft.menu=1..}] run scoreboard players set @s ts.sa.welcome 0
 execute as @a[scores={ts.sa.welcome=0}] run function #spawnanimations:welcome
-
+# A player executed /trigger tschipcraft.menu
 execute as @a[scores={tschipcraft.menu=1..}] run schedule function spawnanimations:messages/menu_reset 1t
+# A player used the Edit activation distance button
+execute as @a[scores={ts.sa.distance=-50..}] at @s run function spawnanimations:settings/custom_distance

@@ -19,6 +19,7 @@ scoreboard objectives remove ts.sa.y
 scoreboard objectives remove ts.sa.z
 
 scoreboard objectives remove ts.sa.settings
+scoreboard objectives remove ts.sa.distance
 
 scoreboard objectives remove tschipcraft.menu
 
@@ -38,4 +39,4 @@ datapack disable "file/spawnanimations"
 datapack disable "file/${file_name}"
 
 
-say Spawn Animations by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.
+say ⏻ Spawn Animations v${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.

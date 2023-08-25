@@ -1,15 +1,15 @@
 <h1 align="center">
-  <img src="pack.png" width="95" height="95" style="image-rendering: pixelated"><br/>
+  <img src="pack.png" width="128" height="128" style="image-rendering: pixelated"><br/>
   Spawn Animations
 </h1>
 <p align="center">
   <a href="https://github.com/Tschipcraft/spawnanimations/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/spawnanimations?colorA=191700&colorB=e3e1ce&style=for-the-badge"></a>
-  <a href="https://www.curseforge.com/minecraft/texture-packs/spawn-animations"><img src="https://cf.way2muchnoise.eu/full_811803_downloads.svg?badge_style=for_the_badge"></a>
+  <a href="https://www.curseforge.com/minecraft/texture-packs/spawn-animations"><img src="https://img.shields.io/curseforge/dt/811803?label=CurseForge&colorA=191700&colorB=e3e1ce&style=for-the-badge&logo=curseforge"></a>
   <a href="https://modrinth.com/datapack/spawn-animations"><img src="https://img.shields.io/modrinth/dt/spawn-animations?label=Modrinth&colorA=191700&colorB=e3e1ce&style=for-the-badge&logo=modrinth"></a>
   <a href="https://github.com/Tschipcraft/spawnanimations/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/spawnanimations/total?logo=github&colorA=191700&colorB=e3e1ce&style=for-the-badge"></a>
 </p>
 
-> A data pack for 1.14x-1.20x
+> A data pack for Minecraft 1.14x-1.20x
 
 ## Features
 
@@ -20,7 +20,7 @@ Zombies, Husks, Drowned, Skeletons, Strays, Spiders, Cave Spiders, Creepers, Sli
 
 This data pack is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.
 
-[-> For available settings and customization, take a look at the wiki <-](https://github.com/Tschipcraft/spawnanimations/wiki)
+[➜ For available settings and customization, take a look at the wiki](https://github.com/Tschipcraft/spawnanimations/wiki)
 
 
 ## Demo Gifs

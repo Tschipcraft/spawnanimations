@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "environment": "*",
+  "depends": {
+    "minecraft": ">=1.17"
+  },
+  "entrypoints": {
+    "main": [
+      "net.tschipcraft.spawnanimations.fabric.Init"
+    ]
+  },
+  "id": "spawnanimations",
+  "version": "${version}+mod",
+  "name": "Spawn Animations",
+  "description": "Hostile mobs dig out of the ground or poof into existence when they spawn!\n§lWorks with:§r Zombies, Husks, Drowned, Skeletons, Strays, Spiders, Cave Spiders, Creepers, Slimes, Magma Cubes, Wither Skeletons, Hoglins, Zombified Piglins, Striders, Enderman and Giants.\nThis data pack is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.\nExecute the command §o/function §ospawnanimations:settings§r for a world-specific settings menu and/or install MidnightLib for global settings accross all worlds.",
+  "license": "Custom",
+  "icon": "pack.png",
+  "authors": [
+    "Tschipcraft"
+  ],
+  "contact": {
+    "homepage": "https://tschipcraft.ddns.net/spawnanimations.html",
+    "sources": "https://github.com/Tschipcraft/spawnanimations",
+    "issues": "https://github.com/Tschipcraft/spawnanimations/issues"
+  },
+  "recommends": {
+    "modmenu": "*",
+    "modmenu-badges-lib": "*",
+    "midnightlib": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.donate": "https://ko-fi.com/tschipcraft",
+        "modmenu.modrinth": "https://modrinth.com/datapack/spawn-animations",
+        "modmenu.curseforge": "https://www.curseforge.com/minecraft/texture-packs/spawn-animations",
+        "modmenu.youtube": "https://www.youtube.com/@tschipcraft"
+      }
+    },
+    "catalogue": {
+      "icon": {
+        "item": "minecraft:zombie_spawn_egg"
+      },
+      "banner": "pack.png"
+    },
+    "mcb": [
+      {
+        "name": "Data Pack",
+        "fillColor": -2007367551,
+        "outlineColor": -2001590283
+      }
+    ]
+  }
+}

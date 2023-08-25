@@ -15,4 +15,4 @@ tag @e[type=minecraft:item,tag=ts.sa.i.checked] remove ts.sa.i.checked
 schedule clear spawnanimations:loop
 schedule function spawnanimations:loop 2s
 
-say Successfully resetted Spawn Animations!
+say ⏏ Successfully resetted Spawn Animations!
