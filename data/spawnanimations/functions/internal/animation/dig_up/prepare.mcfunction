@@ -7,4 +7,5 @@ execute as @s[predicate=!spawnanimations:exclude] run tag @s add ts.sa.verified
 execute as @s[tag=!ts.sa.verified,nbt={Silent:1b}] run tag @s add ts.sa.verified
 execute as @s[tag=!ts.sa.verified,nbt={NoAI:1b}] run tag @s add ts.sa.verified
 
-execute as @s[tag=!ts.sa.verified] run function spawnanimations:internal/animation/dig_up/initalise
+# Hide the entity
+execute as @s[tag=!ts.sa.verified] run function spawnanimations:internal/entity/hide

@@ -1,0 +1,20 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "legs": {
+        "items": [
+          "minecraft:chest"
+        ],
+        "count": 1
+      },
+      "feet": {
+        "items": [
+          "minecraft:chest"
+        ],
+        "count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "head": {
+        "count": 0
+      },
+      "chest": {
+        "count": 0
+      },
+      "mainhand": {
+        "count": 0
+      },
+      "offhand": {
+        "count": 0
+      }
+    }
+  }
+}

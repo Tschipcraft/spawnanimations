@@ -1,33 +1,11 @@
-{
-  "//comment": "This predicate checks if hidden mobs meet the right data format for storing items",
-  "condition": "minecraft:entity_properties",
-  "entity": "this",
-  "predicate": {
-    "equipment": {
-      "head": {
-        "count": 0
-      },
-      "chest": {
-        "count": 0
-      },
-      "legs": {
-        "items": [
-          "minecraft:chest"
-        ],
-        "count": 1
-      },
-      "feet": {
-        "items": [
-          "minecraft:chest"
-        ],
-        "count": 1
-      },
-      "mainhand": {
-        "count": 0
-      },
-      "offhand": {
-        "count": 0
-      }
-    }
+[
+  {
+    "//comment": "This predicate checks if hidden mobs meet the right data format for storing/restoring worn/held items",
+    "condition": "minecraft:reference",
+    "name": "spawnanimations:validate/save_format"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "spawnanimations:validate/hidden"
   }
-}
+]

@@ -1,7 +1,7 @@
 ## by Tschipcraft
 
 # Finish initalise
-execute as @e[tag=ts.sa.initalise] run function spawnanimations:internal/initalise_end
+execute as @e[tag=ts.sa.to_hide] run function spawnanimations:internal/entity/ehs/hide_exec
 # Remove animation trigger
 execute as @e[tag=ts.sa.to_verify] at @s run function spawnanimations:internal/animation/dig_up/verify_in_air
 # Cancel animation

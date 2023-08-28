@@ -1,7 +1,7 @@
 ## by Tschipcraft
 
-## Finish initalise
-execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.initalise] run function spawnanimations:internal/animation/dig_up/initalise_end
+## Finish hiding an entity
+execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_hide] run function spawnanimations:internal/entity/ehs/hide_exec
 
 ## Detect new mobs
 # To edit mobs that are affected, see ../tags/entity_types/dig_up_animation.json
@@ -19,13 +19,8 @@ execute if score $global ts.sa.count matches ..100 as @e[type=!#spawnanimations:
 ## Tick dig up animation
 execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.verify,tag=!smithed.strict,tag=!ignore.global] at @s run function spawnanimations:internal/animation/dig_up/core
 
-
 ## Special Animations
 # - see you in v2.0
-
-
-## Remove problematic items
-execute as @e[type=minecraft:item,tag=!ts.sa.i.checked,tag=!global.ignore] run function spawnanimations:internal/hidden/remove_invalid_item/check
 
 
 ## Menu

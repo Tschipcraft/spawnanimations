@@ -20,8 +20,11 @@ Zombies, Husks, Drowned, Skeletons, Strays, Spiders, Cave Spiders, Creepers, Sli
 
 This data pack is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.
 
+This data pack is completely server-side.
+
 [➜ For available settings and customization, take a look at the wiki](https://github.com/Tschipcraft/spawnanimations/wiki)
 
+More animations are planned for v2.0.
 
 ## Demo Gifs
 
