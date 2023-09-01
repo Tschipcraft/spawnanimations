@@ -8,7 +8,6 @@ public class sendConfig {
 
     public static void sendConfig(MinecraftServer server) {
         sendCommand("scoreboard objectives add ts.sa.settings dummy", server);
-
         if (Config.activation_distance == 0) {
             sendCommand("execute unless score $activation_dist ts.sa.settings matches 1..100 run scoreboard players set $activation_dist ts.sa.settings 20", server);
             sendCommand("execute if score #lock_distance ts.sa.settings matches 1 run scoreboard players set #lock_distance ts.sa.settings 0", server);
@@ -31,16 +30,16 @@ public class sendConfig {
         } else if (Config.hide_worn_armor_and_tools == Config.bool.NO) {
             sendCommand("scoreboard players set $hide_armor ts.sa.settings -1", server);
         } else {
-            sendCommand("execute unless score $hide_armor ts.sa.settings matches -1 run scoreboard players set $hide_armor ts.sa.settings 0", server);
-            sendCommand("execute unless score $hide_armor ts.sa.settings matches 2 run scoreboard players set $hide_armor ts.sa.settings 1", server);
+            sendCommand("execute if score $hide_armor ts.sa.settings matches -1 run scoreboard players set $hide_armor ts.sa.settings 0", server);
+            sendCommand("execute if score $hide_armor ts.sa.settings matches 2 run scoreboard players set $hide_armor ts.sa.settings 1", server);
         }
         if (Config.play_animation_on_unsupported_blocks == Config.bool.YES) {
             sendCommand("scoreboard players set $play_unsupport ts.sa.settings 2", server);
         } else if (Config.play_animation_on_unsupported_blocks == Config.bool.NO) {
             sendCommand("scoreboard players set $play_unsupport ts.sa.settings -1", server);
         } else {
-            sendCommand("execute unless score $play_unsupport ts.sa.settings matches -1 run scoreboard players set $play_unsupport ts.sa.settings 0", server);
-            sendCommand("execute unless score $play_unsupport ts.sa.settings matches 2 run scoreboard players set $play_unsupport ts.sa.settings 1", server);
+            sendCommand("execute if score $play_unsupport ts.sa.settings matches -1 run scoreboard players set $play_unsupport ts.sa.settings 0", server);
+            sendCommand("execute if score $play_unsupport ts.sa.settings matches 2 run scoreboard players set $play_unsupport ts.sa.settings 1", server);
         }
     }
 

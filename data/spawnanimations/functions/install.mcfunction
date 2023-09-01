@@ -22,9 +22,10 @@ execute unless score $play_unsupport ts.sa.settings matches -1..2 run scoreboard
 # Entity properties
 scoreboard objectives add ts.sa.e.y dummy
 scoreboard objectives add ts.sa.e.speed dummy
-scoreboard objectives add ts.sa.e.Inv dummy
 scoreboard objectives add ts.sa.e.stage dummy
 scoreboard objectives add ts.sa.e.height dummy
+scoreboard objectives add ts.sa.e.nbt.Inv dummy
+scoreboard objectives add ts.sa.e.nbt.Sil dummy
 
 # Initalise storage
 data merge storage spawnanimations:temp {ArmorItems:[{},{},{},{}],HandItems:[{},{}]}

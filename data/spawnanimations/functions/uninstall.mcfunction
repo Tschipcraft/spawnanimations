@@ -25,9 +25,10 @@ scoreboard objectives remove tschipcraft.menu
 
 scoreboard objectives remove ts.sa.e.y
 scoreboard objectives remove ts.sa.e.speed
-scoreboard objectives remove ts.sa.e.Inv
 scoreboard objectives remove ts.sa.e.stage
 scoreboard objectives remove ts.sa.e.height
+scoreboard objectives remove ts.sa.e.nbt.Inv
+scoreboard objectives remove ts.sa.e.nbt.Sil
 
 # Remove storage
 data remove storage spawnanimations:temp HandItems

@@ -1,6 +1,5 @@
 package net.tschipcraft.spawnanimations.forge;
 
-import com.mojang.logging.LogUtils;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -13,6 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Mod("spawnanimations")
 @Mod.EventBusSubscriber(modid = "spawnanimations")
@@ -24,7 +24,7 @@ public class Init {
 	static {
 		try {
 			// Directly reference a slf4j logger
-			LOGGER = LogUtils.getLogger();
+			LOGGER = LoggerFactory.getLogger(MODID);
 		} catch (NoClassDefFoundError ignored) {
 		}
 	}
