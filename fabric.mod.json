@@ -34,7 +34,8 @@
         "modmenu.donate": "https://ko-fi.com/tschipcraft",
         "modmenu.modrinth": "https://modrinth.com/datapack/spawn-animations",
         "modmenu.curseforge": "https://www.curseforge.com/minecraft/texture-packs/spawn-animations",
-        "modmenu.youtube": "https://www.youtube.com/@tschipcraft"
+        "modmenu.youtube": "https://www.youtube.com/@tschipcraft",
+        "modmenu.wiki": "https://github.com/Tschipcraft/spawnanimations/wiki"
       }
     },
     "catalogue": {
@@ -49,6 +50,9 @@
         "fillColor": -2007367551,
         "outlineColor": -2001590283
       }
-    ]
+    ],
+    "duckyupdater": {
+      "modrinthId": "zrzYrlm0"
+    }
   }
 }

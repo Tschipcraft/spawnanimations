@@ -34,11 +34,9 @@ scoreboard objectives remove ts.sa.e.nbt.Sil
 data remove storage spawnanimations:temp HandItems
 data remove storage spawnanimations:temp ArmorItems
 
-
 # Disable data pack
 datapack disable "file/spawnanimations.zip"
 datapack disable "file/spawnanimations"
 datapack disable "file/${file_name}"
 
-
-say ⏻ Spawn Animations v${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.
+say ⏻ Spawn Animations v${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack/mod.
