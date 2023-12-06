@@ -29,6 +29,7 @@ scoreboard objectives remove ts.sa.e.stage
 scoreboard objectives remove ts.sa.e.height
 scoreboard objectives remove ts.sa.e.nbt.Inv
 scoreboard objectives remove ts.sa.e.nbt.Sil
+scoreboard objectives remove ts.sa.e.nbt.CrCh
 
 # Remove storage
 data remove storage spawnanimations:temp HandItems

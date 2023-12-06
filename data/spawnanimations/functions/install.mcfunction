@@ -26,6 +26,7 @@ scoreboard objectives add ts.sa.e.stage dummy
 scoreboard objectives add ts.sa.e.height dummy
 scoreboard objectives add ts.sa.e.nbt.Inv dummy
 scoreboard objectives add ts.sa.e.nbt.Sil dummy
+scoreboard objectives add ts.sa.e.nbt.CrCh dummy
 
 # Initalise storage
 data merge storage spawnanimations:temp {ArmorItems:[{},{},{},{}],HandItems:[{},{}]}

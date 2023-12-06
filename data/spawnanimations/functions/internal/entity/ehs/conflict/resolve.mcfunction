@@ -1,5 +1,6 @@
 ##by Tschipcraft
 # Tries to resolve the incorrect data format for hidden entities
+# Called by evaluate.mcfunction
 
 data modify storage spawnanimations:temp ArmorItems set from entity @s ArmorItems
 data modify storage spawnanimations:temp HandItems set from entity @s HandItems

@@ -1,5 +1,6 @@
 ##by Tschipcraft
 # Recovers data that wasn't overwritten
+# Called by evaluate.mcfunction
 
 # Restore items that weren't overwritten
 execute unless data entity @s ArmorItems[2].id if data entity @s ArmorItems[0].tag.BlockEntityTag.Items[2].id if data entity @s ArmorItems[0].tag.TsSaRemove run data modify entity @s ArmorItems[2] set from entity @s ArmorItems[0].tag.BlockEntityTag.Items[2]

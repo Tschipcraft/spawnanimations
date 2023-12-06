@@ -24,7 +24,7 @@ This data pack/mod is completely server-side, but can also be installed on the c
 
 [➜ For available settings and customization, take a look at the wiki](https://github.com/Tschipcraft/spawnanimations/wiki)
 
-More animations are planned for v2.0.
+More sophisticated animations are planned for v2.0.
 
 ## Demo Gifs
 
