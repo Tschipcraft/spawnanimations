@@ -1,2 +1,4 @@
 # Keep LF line endings for forge .toml file
 *.toml text eol=lf
+*.json text eol=lf
+*.mcfunction text eol=lf
