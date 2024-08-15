@@ -6,16 +6,17 @@ data modify storage spawnanimations:temp ArmorItems set from entity @s ArmorItem
 data modify storage spawnanimations:temp HandItems set from entity @s HandItems
 
 # Save new Armor Items
-execute if data storage spawnanimations:temp ArmorItems[2].id run data modify entity @s ArmorItems[0].tag.BlockEntityTag.Items[2] set from storage spawnanimations:temp ArmorItems[2]
-execute if data storage spawnanimations:temp ArmorItems[3].id run data modify entity @s ArmorItems[0].tag.BlockEntityTag.Items[3] set from storage spawnanimations:temp ArmorItems[3]
+execute if data storage spawnanimations:temp ArmorItems[2].id run data modify entity @s ArmorItems[0].components.minecraft:container[2].item.components.minecraft:container[0].item set from storage spawnanimations:temp ArmorItems[2]
+execute if data storage spawnanimations:temp ArmorItems[3].id run data modify entity @s ArmorItems[0].components.minecraft:container[3].item.components.minecraft:container[0].item set from storage spawnanimations:temp ArmorItems[3]
 
 # Save new Hand Items
 # Use offhand, if available
-execute if data storage spawnanimations:temp HandItems[0].id if data entity @s ArmorItems[1].tag.BlockEntityTag.Items[0].id unless data entity @s ArmorItems[1].tag.BlockEntityTag.Items[1].id run data modify entity @s ArmorItems[1].tag.BlockEntityTag.Items[1] set from storage spawnanimations:temp HandItems[0]
+execute if data storage spawnanimations:temp HandItems[0].id if data entity @s ArmorItems[0].components.minecraft:container[4].item.components.minecraft:container[0].item.id unless data entity @s ArmorItems[0].components.minecraft:container[5].item.components.minecraft:container[0].item.id run data modify entity @s ArmorItems[0].components.minecraft:container[5].item.components.minecraft:container[0].item set from storage spawnanimations:temp HandItems[0]
+# Uh, why do I clear it regardless if above code worked?? TODO
 data modify storage spawnanimations:temp HandItems[0] set value {}
 
-execute if data storage spawnanimations:temp HandItems[0].id run data modify entity @s ArmorItems[1].tag.BlockEntityTag.Items[0] set from storage spawnanimations:temp HandItems[0]
-execute if data storage spawnanimations:temp HandItems[1].id run data modify entity @s ArmorItems[1].tag.BlockEntityTag.Items[1] set from storage spawnanimations:temp HandItems[1]
+execute if data storage spawnanimations:temp HandItems[0].id run data modify entity @s ArmorItems[0].components.minecraft:container[4].item.components.minecraft:container[0].item set from storage spawnanimations:temp HandItems[0]
+execute if data storage spawnanimations:temp HandItems[1].id run data modify entity @s ArmorItems[0].components.minecraft:container[5].item.components.minecraft:container[0].item set from storage spawnanimations:temp HandItems[1]
 
 # Remove temporary data
 data merge entity @s {HandItems:[]}

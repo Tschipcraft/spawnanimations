@@ -3,16 +3,16 @@
 # Called by evaluate.mcfunction
 
 # Restore items that weren't overwritten
-execute unless data entity @s ArmorItems[2].id if data entity @s ArmorItems[0].components.minecraft:bundle_contents[2].id if data entity @s ArmorItems[0].tag.TsSaRemove run data modify entity @s ArmorItems[2] set from entity @s ArmorItems[0].components.minecraft:bundle_contents[2]
-execute unless data entity @s ArmorItems[3].id if data entity @s ArmorItems[0].components.minecraft:bundle_contents[3].id if data entity @s ArmorItems[0].tag.TsSaRemove run data modify entity @s ArmorItems[3] set from entity @s ArmorItems[0].components.minecraft:bundle_contents[3]
-execute unless data entity @s ArmorItems[1].id if data entity @s ArmorItems[0].components.minecraft:bundle_contents[1].id if data entity @s ArmorItems[0].tag.TsSaRemove run data modify entity @s ArmorItems[1] set from entity @s ArmorItems[0].components.minecraft:bundle_contents[1]
+execute unless data entity @s ArmorItems[2].id if data entity @s ArmorItems[0].components.minecraft:container[2].item.components.minecraft:container[0].item.id if data entity @s ArmorItems[0].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[2] set from entity @s ArmorItems[0].components.minecraft:container[2].item.components.minecraft:container[0].item
+execute unless data entity @s ArmorItems[3].id if data entity @s ArmorItems[0].components.minecraft:container[3].item.components.minecraft:container[0].item.id if data entity @s ArmorItems[0].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[3] set from entity @s ArmorItems[0].components.minecraft:container[3].item.components.minecraft:container[0].item
+execute unless data entity @s ArmorItems[1].id if data entity @s ArmorItems[0].components.minecraft:container[1].item.components.minecraft:container[0].item.id if data entity @s ArmorItems[0].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[1] set from entity @s ArmorItems[0].components.minecraft:container[1].item.components.minecraft:container[0].item
 
-execute unless data entity @s HandItems[0].id if data entity @s ArmorItems[1].components.minecraft:bundle_contents[0].id if data entity @s ArmorItems[1].tag.TsSaRemove run data modify entity @s HandItems[0] set from entity @s ArmorItems[1].components.minecraft:bundle_contents[0]
-execute unless data entity @s HandItems[1].id if data entity @s ArmorItems[1].components.minecraft:bundle_contents[1].id if data entity @s ArmorItems[1].tag.TsSaRemove run data modify entity @s HandItems[1] set from entity @s ArmorItems[1].components.minecraft:bundle_contents[1]
+execute unless data entity @s HandItems[0].id if data entity @s ArmorItems[1].components.minecraft:container[0].item.components.minecraft:container[0].item.id if data entity @s ArmorItems[1].components.minecraft:custom_data.TsSaRemove run data modify entity @s HandItems[0] set from entity @s ArmorItems[1].components.minecraft:container[0].item.components.minecraft:container[0].item
+execute unless data entity @s HandItems[1].id if data entity @s ArmorItems[1].components.minecraft:container[1].item.components.minecraft:container[0].item.id if data entity @s ArmorItems[1].components.minecraft:custom_data.TsSaRemove run data modify entity @s HandItems[1] set from entity @s ArmorItems[1].components.minecraft:container[1].item.components.minecraft:container[0].item
 
 # Remove container items
-execute if data entity @s ArmorItems[0].tag.TsSaRemove run data modify entity @s ArmorItems[0] set value {}
-execute if data entity @s ArmorItems[1].tag.TsSaRemove run data modify entity @s ArmorItems[1] set value {}
+execute if data entity @s ArmorItems[0].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[0] set value {}
+execute if data entity @s ArmorItems[1].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[1] set value {}
 
 tag @s remove ts.sa.ehs.saved
 
