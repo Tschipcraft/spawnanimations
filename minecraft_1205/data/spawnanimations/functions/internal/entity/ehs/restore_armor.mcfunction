@@ -1,8 +1,9 @@
 ##by Tschipcraft
-# This function restores the worn armor and tools into two chest items located in the feet and leggins slot that don't get rendered. This data format is validated by the spawnanimations:validate predicate
+# This function restores the worn armor and tools from one chest items located in the feet slot that don't get rendered. This data format is validated by the spawnanimations:validate predicate
 
 tag @s remove ts.sa.ehs.saved
 
+# Copy to cache
 data modify storage spawnanimations:temp ArmorItems set from entity @s ArmorItems[0].components.minecraft:container
 
 # Build entity data

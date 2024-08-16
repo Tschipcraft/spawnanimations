@@ -3,6 +3,7 @@
 # Called by evaluate.mcfunction
 
 # Restore items that weren't overwritten
+# This won't work anyway anymore TODO
 execute unless data entity @s ArmorItems[2].id if data entity @s ArmorItems[0].components.minecraft:container[2].item.components.minecraft:container[0].item.id if data entity @s ArmorItems[0].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[2] set from entity @s ArmorItems[0].components.minecraft:container[2].item.components.minecraft:container[0].item
 execute unless data entity @s ArmorItems[3].id if data entity @s ArmorItems[0].components.minecraft:container[3].item.components.minecraft:container[0].item.id if data entity @s ArmorItems[0].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[3] set from entity @s ArmorItems[0].components.minecraft:container[3].item.components.minecraft:container[0].item
 execute unless data entity @s ArmorItems[1].id if data entity @s ArmorItems[0].components.minecraft:container[1].item.components.minecraft:container[0].item.id if data entity @s ArmorItems[0].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[1] set from entity @s ArmorItems[0].components.minecraft:container[1].item.components.minecraft:container[0].item

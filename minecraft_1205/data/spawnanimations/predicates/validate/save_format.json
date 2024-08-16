@@ -4,10 +4,11 @@
   "predicate": {
     "equipment": {
       "feet": {
-        "items": [
-          "minecraft:chest"
-        ],
-        "count": 1
+        "items": "minecraft:chest",
+        "count": 1,
+        "predicates": {
+          "minecraft:custom_data": "{TsSaRemove:1b}"
+        }
       }
     }
   }
