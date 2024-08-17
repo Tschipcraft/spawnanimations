@@ -1,5 +1,5 @@
 ##by Tschipcraft
-# This function restores the worn armor and tools from one chest items located in the feet slot that don't get rendered. This data format is validated by the spawnanimations:validate predicate
+# This function restores the worn armor and tools from one chest item located in the feet slot that doesn't get rendered. This data format is validated by the spawnanimations:validate predicate
 
 tag @s remove ts.sa.ehs.saved
 

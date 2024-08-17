@@ -1,5 +1,5 @@
 ##by Tschipcraft
-# This function saves the worn armor and tools into one chest items located in the feet slot that don't get rendered. This data format is validated by the spawnanimations:validate predicate
+# This function saves the worn armor and tools into one chest item located in the feet slot that doesn't get rendered. This data format is validated by the spawnanimations:validate predicate
 
 tag @s add ts.sa.ehs.saved
 
