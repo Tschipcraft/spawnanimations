@@ -1,14 +1,23 @@
 {
+  "id": "spawnanimations",
   "pack": {
     "pack_format": 15,
-    "supported_formats": [7, 26],
-    "description": "Spawn Animations by Tschipcraft // Minecraft 1.17x-1.20x"
+    "supported_formats": [7, 44],
+    "description": "Tschipcraft's Spawn Animations\n└ v${version} ● mc${mc_version}"
   },
   "overlays": {
     "entries": [
       {
-        "formats": [41, 41],
-        "directory": "minecraft_1205"
+        "formats": [33, 44],
+        "directory": "overlay_33"
+      },
+      {
+        "formats": [35,44],
+        "directory": "overlay_35"
+      },
+      {
+        "formats": [39,44],
+        "directory": "overlay_39"
       }
     ]
   }

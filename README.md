@@ -24,14 +24,14 @@ This data pack/mod is completely server-side, but can also be installed on the c
 
 [➜ For available settings and customization, take a look at the wiki](https://github.com/Tschipcraft/spawnanimations/wiki)
 
-More sophisticated animations are planned for v2.0.
+More sophisticated animations with Animated Java are planned for v2.0.
 
 ## Demo Gifs
 
 <details>
 <summary>Click to expand</summary>
-<img src="https://i.imgur.com/X8A0UY9.gif" width=55%>
-<img src="https://i.imgur.com/0rLJakI.gif" width=55%>
+<img alt="Stray digging up" src="https://i.imgur.com/X8A0UY9.gif" width=55%>
+<img alt="Enderman digging up" src="https://i.imgur.com/0rLJakI.gif" width=55%>
 </details>
 
 
@@ -41,7 +41,7 @@ Download the latest release from [here](https://github.com/Tschipcraft/spawnanim
 
 For Minecraft 1.14, 1.15 and 1.16 use [a legacy edition](https://github.com/Tschipcraft/spawnanimations/tree/master/other_editions).
 
-This data pack is also available as a mod with an additional global settings menu when installed alongside [MidnightLib](https://modrinth.com/mod/midnightlib). Download the latest release and put the mod .jar file into your `.minecraft/mods` folder.
+This data pack is also available as a mod with an additional global config file and settings menu when installed alongside [MidnightLib](https://modrinth.com/mod/midnightlib). Download the latest release and put the mod .jar file into your `.minecraft/mods` folder.
 
 Also available on Modrinth and CurseForge!
 
