@@ -1,0 +1,6 @@
+- Added support for Minecraft 1.20.6
+  - Added additional proxy chest items that hold the actual items to the unrendered chest item in the foot slot, preventing Minecraft from stripping away empty item slots and thus messing up the armor and tools save order. Additionally, HandItems are now also stored in the foot slot (indexes 4 and 5) instead of a separate chest item in the legs slot
+  - Added update function to convert the pre-1.20.5 armor and tools save format to the new post-1.20.6 format
+  - Added slot information to the pre-1.20.5 save format, including a user-callable function to add this to already saved entities, to prevent Minecraft from throwing away important data when upgrading a world to 1.20.5+
+- Fixed trying to play the block break animation for unsupported blocks on non-solid blocks like air
+- Fixed single layer snow no longer producing snow particles
