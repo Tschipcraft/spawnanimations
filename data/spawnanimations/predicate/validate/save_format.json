@@ -1,0 +1,15 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "feet": {
+        "items": "minecraft:chest",
+        "count": 1,
+        "predicates": {
+          "minecraft:custom_data": "{TsSaRemove:1b}"
+        }
+      }
+    }
+  }
+}

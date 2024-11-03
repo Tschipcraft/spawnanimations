@@ -15,9 +15,9 @@
   "spawnanimations.midnightconfig.activation_mode": "Activation Mode",
   "spawnanimations.midnightconfig.activation_mode.tooltip": "Default: §aClassic§f\n§nClassic§r: Out of range mobs will stay hidden until a player is in range\n§nVanilla§r: Out of range mobs will spawn normally",
   "spawnanimations.midnightconfig.hide_worn_armor_and_tools": "Hide worn armor and tools",
-  "spawnanimations.midnightconfig.hide_worn_armor_and_tools.tooltip": "Default: §aYes§f\nIf enabled, stores the worn armor and tools in the feet and leggings slot of a hidden entity.\n§6⚠ Note: This may impact worn armor and tool drop rates inside farms.",
+  "spawnanimations.midnightconfig.hide_worn_armor_and_tools.tooltip": "Default: §aYes§f\nIf enabled, stores the worn armor and tools in the feet and in some versions leggings slot of a hidden entity.\n§6⚠ Note: This may impact worn armor and tool drop rates from farms.",
   "spawnanimations.midnightconfig.play_animation_on_unsupported_blocks": "Play block break animation on unsupported blocks",
-  "spawnanimations.midnightconfig.play_animation_on_unsupported_blocks.tooltip": "Default: §aYes§f\nIf enabled, plays a block breaking animation even on blocks that are not hard-coded into the data pack.\n§6⚠ Note: This could lead to unwanted block updates.",
+  "spawnanimations.midnightconfig.play_animation_on_unsupported_blocks.tooltip": "Default: §cNo§f\nIf enabled, plays a block breaking animation even on blocks that are not hard-coded into the data pack.\n§6⚠ Note: This could lead to unwanted block updates.",
 
   "spawnanimations.midnightconfig.enum.bool.WORLD": "§bWorld-Specific",
   "spawnanimations.midnightconfig.enum.bool.YES": "§a[✔] Yes",

@@ -1,5 +1,7 @@
 {
+  "replace": false,
   "values": [
+    "tschipcraft:menu_header",
     "spawnanimations:messages/welcome"
   ]
 }
