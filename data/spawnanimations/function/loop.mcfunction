@@ -24,3 +24,5 @@ execute if score $global ts.sa.count matches ..100 as @e[type=!#spawnanimations:
 ## Menu
 scoreboard players enable @a tschipcraft.menu
 #scoreboard players add @a ts.sa.welcome 0 - don't show menu on first boot
+# A player used the Edit activation distance button
+execute as @a[scores={ts.sa.distance=-50..}] at @s run function spawnanimations:settings/custom_distance

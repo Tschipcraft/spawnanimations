@@ -1,4 +1,4 @@
-name: Continuous Deployment
+name: Continuous Deployment (Build)
 on:
   workflow_dispatch:
     inputs:
@@ -84,70 +84,20 @@ jobs:
           args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r . -x data/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* other_editions/* CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar"
 
       # Upload
-      - name: Upload data pack version to Modrinth
-        uses: Kir-Antipov/mc-publish@v3.3
+      - name: Capture datapack build artifact
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
+        uses: actions/upload-artifact@v4
         with:
-          modrinth-id: zrzYrlm0
-          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-          game-versions: ${{ github.event.inputs.mc_version_range }}
-          game-version-filter: any
-          fail-mode: skip
-
-          name: "[DP] Release v${{ github.event.inputs.tag }}"
-          version: ${{ github.event.inputs.tag }}
-          changelog-file: CHANGES.md
-
-          loaders: |
-            datapack
-          files: |
-            ./${{ github.event.repository.name }}-*.zip
-      
-      - name: Upload mod version to Modrinth
-        uses: Kir-Antipov/mc-publish@v3.3
+          name: "Spawn Animations DEV (Datapack)"
+          path: ./${{ github.event.repository.name }}-*.zip
+      - name: Capture mod build artifact
         if: steps.check_mod_folder.outputs.files_exists == 'true'
+        uses: actions/upload-artifact@v4
         with:
-          modrinth-id: zrzYrlm0
-          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-          game-versions: ${{ github.event.inputs.mc_version_range }}
-          game-version-filter: any
-          fail-mode: skip
+          name: "Spawn Animations DEV (Mod)"
+          path: ./${{ github.event.repository.name }}-*-mod.jar
 
-          name: "[Mod] Release v${{ github.event.inputs.tag }}"
-          version: ${{ github.event.inputs.tag }}+mod
-          changelog-file: CHANGES.md
-
-          dependencies: |
-            fabric-api(optional){modrinth:P7dR8mSH}
-            modmenu(optional){modrinth:mOgUt4GM}
-            modmenu-badges-lib(optional){modrinth:eUw8l2Vi}
-            midnightlib(optional){modrinth:codAaoxh}
-          loaders: |
-            fabric
-            forge
-            quilt
-          files: |
-            ./${{ github.event.repository.name }}-*-mod.jar
-
-      - name: Upload data pack version to CurseForge
-        uses: Kir-Antipov/mc-publish@v3.3
-        if: steps.check_datapack_folder.outputs.files_exists == 'true'
-        with:
-          curseforge-id: 811803
-          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
-          game-versions: ${{ github.event.inputs.mc_version_range }}
-          game-version-filter: any
-          fail-mode: skip
-
-          name: "Release v${{ github.event.inputs.tag }}"
-          version: ${{ github.event.inputs.tag }}
-          changelog-file: CHANGES.md
-
-          loaders: |
-            datapack
-          files: |
-            ./${{ github.event.repository.name }}-*.zip
-
+      # Make sure that this comment doesn't cause issues just in case
       # - name: Upload mod version to CurseForge
       #   uses: Kir-Antipov/mc-publish@v3.3
       #   if: steps.check_mod_folder.outputs.files_exists == 'true'
@@ -176,19 +126,3 @@ jobs:
       #       quilt
       #     files: |
       #       ./${{ github.event.repository.name }}-*-mod.jar
-
-      - name: Add changelog header for GitHub release
-        run: sed -i '1i_Changelog:_' CHANGES.md
-      - name: Upload outputs to GitHub releases
-        uses: Kir-Antipov/mc-publish@v3.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          github-tag: v${{ github.event.inputs.tag }}
-          game-versions: ${{ github.event.inputs.mc_version_range }}
-
-          name: Release v${{ github.event.inputs.tag }}
-          version: v${{ github.event.inputs.tag }}
-          changelog-file: CHANGES.md
-
-          files: |
-           ./${{ github.event.repository.name }}-*.@(zip|jar)
