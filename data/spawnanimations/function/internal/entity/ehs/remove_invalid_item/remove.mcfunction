@@ -1,0 +1,5 @@
+##by Tschipcraft
+
+execute if score $hide_armor ts.sa.settings matches 1 run tellraw @a[gamemode=creative] ["",{"text":"[Spawn Animations]","color":"gray"},{"text":" ⚠ A hidden entity was killed instantly. The worn armor and tools are not recoverable. This error can happen if farms are built for supported mobs. ","bold":false,"color":"yellow"},{"text": "If you encounter issues, please report it","bold":false,"underlined":true,"color":"yellow","clickEvent":{"action":"open_url","value":"https://github.com/Tschipcraft/spawnanimations/issues/new/choose"},"hoverEvent":{"action":"show_text","contents":"✉ Report this issue on GitHub."}},{"text":" or ","color":"yellow"},{"text":"disable the [Hide worn armor and tools] option in the settings.","color":"yellow","bold":false,"underlined":true,"hoverEvent":{"action":"show_text","contents":[{"text":"Click here to disable this feature."}]},"clickEvent":{"action":"run_command","value":"/function spawnanimations:settings/disable_hidearmorandtools"}}]
+
+kill @s[type=minecraft:item]

@@ -19,7 +19,7 @@ execute if block ~ ~ ~ minecraft:cobblestone run particle minecraft:block minecr
 # Other
 execute if block ~ ~ ~ minecraft:hay_block run particle minecraft:block minecraft:hay_block ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ minecraft:gravel run particle minecraft:block minecraft:gravel ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
-execute if block ~ ~0.2 ~ minecraft:snow run particle minecraft:block minecraft:snow ~ ~0.4 ~ 0.1 0 0.1 1 9 normal
+execute if block ~ ~0.3 ~ minecraft:snow run particle minecraft:block minecraft:snow ~ ~0.4 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ #minecraft:ice run particle minecraft:block minecraft:ice ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ minecraft:obsidian run particle minecraft:block minecraft:obsidian ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ minecraft:slime_block run particle minecraft:block minecraft:slime_block ~ ~0.2 ~ 0.1 0 0.1 1 9 normal

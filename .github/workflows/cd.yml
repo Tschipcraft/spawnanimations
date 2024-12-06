@@ -7,19 +7,28 @@ on:
         required: true
         default: '1.0'
       mc_version:
-        description: 'Minecraft version(s) the data pack runs in'
+        description: 'Minecraft version(s) the data pack runs in (human readable)'
         required: true
-        default: '1.20'
+        default: '1.17x-1.21x'
+      mc_version_range:
+        description: 'Minecraft version(s) the data pack runs in (encoded in version range spec)'
+        required: true
+        default: '>=1.17 <=1.21'
 
 jobs:
-  create_data_pack:
+  deploy:
     runs-on: ubuntu-latest
+    name: Build and publish project
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
       - name: Extract tag
         id: tag_version
         run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      # Automatically set version numbers
       - name: Find and replace uninstall file name
         uses: jacobtomlinson/gha-find-replace@v3
         with:
@@ -33,78 +42,153 @@ jobs:
           find: "${version}"
           replace: ${{ github.event.inputs.tag }}
           regex: false
+      - name: Find and replace supported mc versions
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${mc_version}"
+          replace: ${{ github.event.inputs.mc_version }}
+          regex: false
 
       # Check for existence of datapack, mod and/or resourcepack folders.
       - name: Check for data folder
         id: check_datapack_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "data"
       - name: Check for mod folders
         id: check_mod_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "META-INF, net, fabric.mod.json, assets"
       - name: Check for resource pack folder
         id: check_assets_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "assets/minecraft"
 
+      # Package project
       - name: Create data pack zip file
         uses: montudor/action-zip@v1
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq datapack.zip -r data pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" -r . -x assets/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* other_editions/* CHANGES.md ".*"
       - name: Create mod jar file
         uses: montudor/action-zip@v1
         if: steps.check_mod_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq mod.zip -r data assets META-INF net fabric.mod.json pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar" -r . -x unused/* src/* wiki/* other_editions/* CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip"
       - name: Create asset pack zip file
         uses: montudor/action-zip@v1
         if: steps.check_assets_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq assetpack.zip -r assets pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r . -x data/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* other_editions/* CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar"
 
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ github.event.inputs.tag }}
-          release_name: Release v${{ github.event.inputs.tag }}
-          draft: false
-          prerelease: false
-
-      - name: Upload datapack release asset
-        uses: actions/upload-release-asset@v1
+      # Upload
+      - name: Upload data pack version to Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./datapack.zip
-          asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
-          asset_content_type: application/zip
-      - name: Upload mod release asset
-        uses: actions/upload-release-asset@v1
+          modrinth-id: zrzYrlm0
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          game-versions: ${{ github.event.inputs.mc_version_range }}
+          game-version-filter: any
+          fail-mode: skip
+
+          name: "[DP] Release v${{ github.event.inputs.tag }}"
+          version: ${{ github.event.inputs.tag }}
+          changelog-file: CHANGES.md
+
+          loaders: |
+            datapack
+          files: |
+            ./${{ github.event.repository.name }}-*.zip
+      
+      - name: Upload mod version to Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3
         if: steps.check_mod_folder.outputs.files_exists == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./mod.zip
-          asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar
-          asset_content_type: application/jar
-      - name: Upload assetpack release asset
-        uses: actions/upload-release-asset@v1
-        if: steps.check_assets_folder.outputs.files_exists == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          modrinth-id: zrzYrlm0
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          game-versions: ${{ github.event.inputs.mc_version_range }}
+          game-version-filter: any
+          fail-mode: skip
+
+          name: "[Mod] Release v${{ github.event.inputs.tag }}"
+          version: ${{ github.event.inputs.tag }}+mod
+          changelog-file: CHANGES.md
+
+          dependencies: |
+            fabric-api(optional){modrinth:P7dR8mSH}
+            modmenu(optional){modrinth:mOgUt4GM}
+            modmenu-badges-lib(optional){modrinth:eUw8l2Vi}
+            midnightlib(optional){modrinth:codAaoxh}
+          loaders: |
+            fabric
+            forge
+            quilt
+          files: |
+            ./${{ github.event.repository.name }}-*-mod.jar
+
+      - name: Upload data pack version to CurseForge
+        uses: Kir-Antipov/mc-publish@v3.3
+        if: steps.check_datapack_folder.outputs.files_exists == 'true'
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./assetpack.zip
-          asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip
-          asset_content_type: application/zip
+          curseforge-id: 811803
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          game-versions: ${{ github.event.inputs.mc_version_range }}
+          game-version-filter: any
+          fail-mode: skip
+
+          name: "Release v${{ github.event.inputs.tag }}"
+          version: ${{ github.event.inputs.tag }}
+          changelog-file: CHANGES.md
+
+          loaders: |
+            datapack
+          files: |
+            ./${{ github.event.repository.name }}-*.zip
+
+      # - name: Upload mod version to CurseForge
+      #   uses: Kir-Antipov/mc-publish@v3.3
+      #   if: steps.check_mod_folder.outputs.files_exists == 'true'
+      #   with:
+      #     curseforge-id: 910095
+      #     curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+      #     game-versions: ${{ github.event.inputs.mc_version_range }}
+      #     game-version-filter: any
+      #     fail-mode: skip
+
+      #     name: "Release v${{ github.event.inputs.tag }}"
+      #     version: ${{ github.event.inputs.tag }}+mod
+      #     changelog-file: CHANGES.md
+
+      #     dependencies: |
+      #       catalogue(optional){curseforge:459701}
+      #       catalogue-fabric(optional){curseforge:667377}
+      #       midnightlib(optional){curseforge:488090}
+      #     java: |
+      #       Java 21
+      #       Java 17
+      #       Java 18
+      #     loaders: |
+      #       fabric
+      #       forge
+      #       quilt
+      #     files: |
+      #       ./${{ github.event.repository.name }}-*-mod.jar
+
+      - name: Add changelog header for GitHub release
+        run: sed -i '1i_Changelog:_' CHANGES.md
+      - name: Upload outputs to GitHub releases
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-tag: v${{ github.event.inputs.tag }}
+          game-versions: ${{ github.event.inputs.mc_version_range }}
+
+          name: Release v${{ github.event.inputs.tag }}
+          version: v${{ github.event.inputs.tag }}
+          changelog-file: CHANGES.md
+
+          files: |
+           ./${{ github.event.repository.name }}-*.@(zip|jar)

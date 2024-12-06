@@ -1,8 +1,13 @@
 ## by Tschipcraft
 # Runs every 5 ticks
 
+schedule function spawnanimations:loop 5t
+
 ## Supply invisibility to hidden entities
 execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_verify,tag=!smithed.strict,tag=!ignore.global] run function spawnanimations:internal/entity/ehs/supply_invisibility
+
+## Check for old format (post-1.20.5)
+function spawnanimations:internal/entity/ehs/check_for_old_format
 
 ## Validate hidden entities
 execute as @e[type=#spawnanimations:can_wear_armor,tag=ts.sa.to_verify,tag=ts.sa.ehs.saved] unless predicate spawnanimations:validate at @s run function spawnanimations:internal/entity/ehs/conflict/evaluate
@@ -19,5 +24,3 @@ execute if score $global ts.sa.count matches ..100 as @e[type=!#spawnanimations:
 ## Menu
 scoreboard players enable @a tschipcraft.menu
 #scoreboard players add @a ts.sa.welcome 0 - don't show menu on first boot
-
-schedule function spawnanimations:loop 5t
