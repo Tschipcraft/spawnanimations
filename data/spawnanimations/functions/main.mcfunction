@@ -25,8 +25,8 @@ execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.verify,tag=!smithed.stric
 
 ## Menu
 execute as @a[scores={tschipcraft.menu=1..}] run scoreboard players set @s ts.sa.welcome 0
-execute as @a[scores={ts.sa.welcome=0}] run function spawnanimations:messages/welcome
+execute as @a[scores={ts.sa.welcome=0}] run function spawnanimations:internal/messages/welcome
 # A player executed /trigger tschipcraft.menu
-execute as @a[scores={tschipcraft.menu=1..}] run schedule function spawnanimations:messages/menu_reset 1t
+execute as @a[scores={tschipcraft.menu=1..}] run schedule function spawnanimations:internal/messages/menu_reset 1t
 # A player used the Edit activation distance button
 execute as @a[scores={ts.sa.distance=-50..}] at @s run function spawnanimations:settings/custom_distance

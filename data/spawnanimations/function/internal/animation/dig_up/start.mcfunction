@@ -1,5 +1,6 @@
 ## by Tschipcraft
-# Starts the dig up animation - The entity has to have been prepared by the initalise.mcfunction
+# Starts the dig up animation
+# The entity is expected to have been prepared by initalise.mcfunction
 
 tag @s remove ts.sa.to_verify
 tag @s add ts.sa.verify

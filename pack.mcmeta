@@ -2,7 +2,7 @@
   "id": "spawnanimations",
   "pack": {
     "pack_format": 15,
-    "supported_formats": [7, 60],
+    "supported_formats": [7, 61],
     "description": "Tschipcraft's Spawn Animations\n└ v${version} ● mc${mc_version}"
   },
   "overlays": {

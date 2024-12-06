@@ -2,6 +2,6 @@
   "replace": false,
   "values": [
     "tschipcraft:menu_header",
-    "spawnanimations:messages/welcome"
+    "spawnanimations:internal/messages/welcome"
   ]
 }

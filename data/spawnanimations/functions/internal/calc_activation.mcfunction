@@ -1,5 +1,5 @@
 ##by Tschipcraft
-# @s/~ ~ ~ is tested entity; global is player position
+# @s/~ ~ ~ is tested entity; $global is player position
 
 # Get position
 execute store result score @s ts.sa.x run data get entity @s Pos[0]
