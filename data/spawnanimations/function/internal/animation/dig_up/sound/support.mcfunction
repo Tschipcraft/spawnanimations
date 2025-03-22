@@ -3,6 +3,7 @@
 # Preserve gamerule
 execute store result score $gamerule.tile_drops ts.sa.settings run gamerule doTileDrops
 execute if score $gamerule.tile_drops ts.sa.settings matches 1 run gamerule doTileDrops false
+
 # Preserve bedrock/air
 scoreboard players set $block ts.sa.settings 0
 execute if block ~ -64 ~ minecraft:bedrock if blocks ~1 -64 ~1 ~-1 -64 ~-1 ~ -64 ~ all run scoreboard players set $block ts.sa.settings 1
@@ -20,8 +21,14 @@ execute if score $play_unsupport ts.sa.settings matches -1..0 run scoreboard pla
 execute if score $block ts.sa.settings matches 1..2 run clone ~1 ~ ~1 ~-1 ~ ~-1 ~-1 -64 ~-1
 execute if score $block ts.sa.settings matches 3..4 run clone ~1 ~ ~1 ~-1 ~ ~-1 ~-1 0 ~-1
 
+# Abort if clone failed (Issue #38)
+execute if score $block ts.sa.settings matches 1 if block ~ -64 ~ minecraft:bedrock run scoreboard players set $block ts.sa.settings 0
+execute if score $block ts.sa.settings matches 2 if block ~ -64 ~ minecraft:air run scoreboard players set $block ts.sa.settings 0
+execute if score $block ts.sa.settings matches 3 if block ~ 0 ~ minecraft:bedrock run scoreboard players set $block ts.sa.settings 0
+execute if score $block ts.sa.settings matches 4 if block ~ 0 ~ minecraft:air run scoreboard players set $block ts.sa.settings 0
+
 # 'Break' the block (particles + sound)
-execute unless score $block ts.sa.settings matches 0 unless block ~ ~ ~ #spawnanimations:exclude run setblock ~ ~ ~ minecraft:air destroy
+execute if score $block ts.sa.settings matches 1..4 unless block ~ ~ ~ #spawnanimations:exclude run setblock ~ ~ ~ minecraft:air destroy
 
 # Restore blocks
 execute if score $block ts.sa.settings matches 1..2 run clone ~1 -64 ~1 ~-1 -64 ~-1 ~-1 ~ ~-1 masked

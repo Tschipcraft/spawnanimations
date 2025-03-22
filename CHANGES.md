@@ -1,14 +1,3 @@
-- **Added support for Minecraft 1.20.6** 🐺, **1.21** ⚔️, **1.21.3** 💰 **and 1.21.4** 🪵 (closes [#31](https://github.com/Tschipcraft/spawnanimations/issues/31))
-  - **Added the Bogged to the dig up animation**
-  - Added additional proxy chest items that hold the actual items to the unrendered chest item in the foot slot, preventing Minecraft from stripping away empty item slots and thus messing up the armor and tools save order. Additionally, HandItems are now also stored in the foot slot (index 4 and 5) instead of a separate chest item in the legs slot
-  - Added update function to convert the pre-1.20.5 armor and tools save format to the new post-1.20.6 format
-  - Added slot information to the pre-1.20.5 save format, including a user-callable function to add this to already saved entities to prevent Minecraft from throwing away important data when upgrading a world to 1.20.5+
-  - Added support for new item component and particle syntax (Thanks @sa-shiro)
-  - Copied the contents of the legacy folders to their new names and removed unused code
-  - Adjusted exclude tag to account for boat ID renames
-  - Updated menu trigger to use advancements instead and added menu message header
-- Fixed single layer snow no longer producing snow particles
-- Fixed mainhand to offhand handling always clearing new mainhand data before overwriting the old mainhand, even if the new data could not be transferred to the offhand
-- Fixed attempting to play the block break animation for unsupported blocks on non-solid blocks like air
-- Changed play animation on unsupported blocks setting to off by default to prevent unwanted block updates ([#16](https://github.com/Tschipcraft/spawnanimations/issues/16))
-- Removed spawnanimations:welcome tag
+- Hardened the Play animation on unsupported blocks option
+  - Fixed incompatibility with PandaAntiPermanentBlockBreak mod (closes [#38](https://github.com/Tschipcraft/spawnanimations/issues/38))
+- Fixed mobs not adjusting their animation speed during their animation

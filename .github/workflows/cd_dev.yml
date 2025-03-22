@@ -96,33 +96,3 @@ jobs:
         with:
           name: "Spawn Animations DEV (Mod)"
           path: ./${{ github.event.repository.name }}-*-mod.jar
-
-      # Make sure that this comment doesn't cause issues just in case
-      # - name: Upload mod version to CurseForge
-      #   uses: Kir-Antipov/mc-publish@v3.3
-      #   if: steps.check_mod_folder.outputs.files_exists == 'true'
-      #   with:
-      #     curseforge-id: 910095
-      #     curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
-      #     game-versions: ${{ github.event.inputs.mc_version_range }}
-      #     game-version-filter: any
-      #     fail-mode: skip
-
-      #     name: "Release v${{ github.event.inputs.tag }}"
-      #     version: ${{ github.event.inputs.tag }}+mod
-      #     changelog-file: CHANGES.md
-
-      #     dependencies: |
-      #       catalogue(optional){curseforge:459701}
-      #       catalogue-fabric(optional){curseforge:667377}
-      #       midnightlib(optional){curseforge:488090}
-      #     java: |
-      #       Java 21
-      #       Java 17
-      #       Java 18
-      #     loaders: |
-      #       fabric
-      #       forge
-      #       quilt
-      #     files: |
-      #       ./${{ github.event.repository.name }}-*-mod.jar
