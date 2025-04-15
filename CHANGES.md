@@ -1,3 +1,6 @@
+- **Added support for Minecraft 1.21.5** 📔
+  - Updated to work with the new equipment NBT format, new text component format, FallDistance NBT rename, and potion entity ID renames
+  - Hide worn armor and tools now uses the unified armor.body slot instead of armor.feet for 1.21.5 and above to allow better late loot recovery
 - Hardened the Play animation on unsupported blocks option
   - Fixed incompatibility with PandaAntiPermanentBlockBreak mod (closes [#38](https://github.com/Tschipcraft/spawnanimations/issues/38))
 - Fixed mobs not adjusting their animation speed during their animation

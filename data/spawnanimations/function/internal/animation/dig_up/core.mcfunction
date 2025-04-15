@@ -42,7 +42,7 @@ execute if block ~ ~0.4 ~ minecraft:lava run particle minecraft:falling_lava ~ ~
 execute as @s[tag=ts.sa.protected,scores={ts.sa.timer=-200..}] at @s anchored eyes if block ^ ^-0.1 ^ #spawnanimations:nonsolid if block ^ ^0.9 ^ #spawnanimations:nonsolid run function spawnanimations:internal/entity/unprotect
 
 ## Prevent fall damage
-execute at @s[tag=!ts.sa.protected] run data merge entity @s {FallDistance:0f}
+execute at @s[tag=!ts.sa.protected] run data merge entity @s {FallDistance:0f,fall_distance:0f}
 
 ## Finish animation
 execute as @s[scores={ts.sa.timer=5..}] at @s run function spawnanimations:internal/animation/dig_up/verify
