@@ -60,6 +60,10 @@ Also available on Modrinth and CurseForge!
 </picture>
 </a>
 
+## Development Builds
+
+Development builds are available on [GitHub Actions](https://github.com/Tschipcraft/spawnanimations/actions/workflows/ci.yml). These builds are not guaranteed to be stable and may contain bugs. Please always back up your world before using them.
+
 ## Manage
 
 To open the ingame menu, execute `/trigger tschipcraft.menu` or `/function #tschipcraft:menu`. There is a **Reset** and an **Uninstall** button.

@@ -1,9 +1,6 @@
 {
   "schemaVersion": 1,
   "environment": "*",
-  "depends": {
-    "minecraft": ">=1.17"
-  },
   "entrypoints": {
     "main": [
       "net.tschipcraft.spawnanimations.fabric.Init"
@@ -12,7 +9,7 @@
   "id": "spawnanimations",
   "version": "${version}+mod",
   "name": "Spawn Animations",
-  "description": "Hostile mobs dig out of the ground or poof into existence when they spawn!\n§lWorks with:§r Zombies, Husks, Drowned, Skeletons, Strays, Spiders, Cave Spiders, Creepers, Slimes, Magma Cubes, Wither Skeletons, Hoglins, Zombified Piglins, Striders, Enderman and Giants.\nThis data pack is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.\nExecute the command §o/function §ospawnanimations:settings§r for a world-specific settings menu and/or install MidnightLib for global settings accross all worlds.",
+  "description": "Hostile mobs dig out of the ground or poof into existence when they spawn!\n§lWorks with:§r Zombies, Husks, Drowned, Skeletons, Strays, Bogged, Spiders, Cave Spiders, Creepers, Slimes, Magma Cubes, Wither Skeletons, Hoglins, Zombified Piglins, Striders, Enderman and Giants.\nThis data pack is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.\nExecute the command §o/function §ospawnanimations:settings§r for a world-specific settings menu and/or install MidnightLib for global settings across all worlds.",
   "license": "Custom",
   "icon": "pack.png",
   "authors": [
@@ -23,6 +20,10 @@
     "sources": "https://github.com/Tschipcraft/spawnanimations",
     "issues": "https://github.com/Tschipcraft/spawnanimations/issues"
   },
+  "depends": {
+    "minecraft": "${mc_version_range_fabric}",
+    "fabric-api": ">=0.34.0"
+  },
   "recommends": {
     "modmenu": "*",
     "modmenu-badges-lib": "*",
@@ -32,8 +33,8 @@
     "modmenu": {
       "links": {
         "modmenu.donate": "https://ko-fi.com/tschipcraft",
-        "modmenu.modrinth": "https://modrinth.com/datapack/spawn-animations",
-        "modmenu.curseforge": "https://www.curseforge.com/minecraft/texture-packs/spawn-animations",
+        "modmenu.modrinth": "https://modrinth.com/datapack/zrzYrlm0",
+        "modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/spawn-animations-mod",
         "modmenu.youtube": "https://www.youtube.com/@tschipcraft",
         "modmenu.wiki": "https://github.com/Tschipcraft/spawnanimations/wiki"
       }
