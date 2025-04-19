@@ -1,4 +1,4 @@
-package net.tschipcraft.spawnanimations.fabric;
+package net.tschipcraft.spawnanimations.neoforge;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 

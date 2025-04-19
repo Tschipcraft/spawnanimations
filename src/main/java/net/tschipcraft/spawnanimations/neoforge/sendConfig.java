@@ -1,4 +1,4 @@
-package net.tschipcraft.spawnanimations.forge;
+package net.tschipcraft.spawnanimations.neoforge;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.commands.CommandSourceStack;
