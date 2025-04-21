@@ -2,8 +2,8 @@
   "id": "spawnanimations",
   "pack": {
     "pack_format": 15,
-    "supported_formats": [7, 61],
-    "description": "Tschipcraft's Spawn Animations\n└ v${version} ● mc${mc_version}"
+    "supported_formats": [7, 71],
+    "description": "Tschipcraft's Spawn Animations\n└ v${version} ● mc${mc_human_version_range}"
   },
   "overlays": {
     "entries": [
@@ -18,6 +18,10 @@
       {
         "formats": [39,44],
         "directory": "overlay_39"
+      },
+      {
+        "formats": [45,62],
+        "directory": "overlay_pre_63"
       }
     ]
   }

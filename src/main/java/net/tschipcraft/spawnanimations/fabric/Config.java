@@ -37,4 +37,5 @@ public class Config extends MidnightConfig {
     public static bool hide_worn_armor_and_tools = bool.WORLD;
     @Entry
     public static bool play_animation_on_unsupported_blocks = bool.WORLD;
+
 }

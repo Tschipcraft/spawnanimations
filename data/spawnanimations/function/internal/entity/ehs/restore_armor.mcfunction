@@ -4,22 +4,20 @@
 tag @s remove ts.sa.ehs.saved
 
 # Copy to cache
-data modify storage spawnanimations:temp ArmorItems set from entity @s ArmorItems[0].components.minecraft:container
+data modify storage spawnanimations:temp equipment set from entity @s equipment.body.components.minecraft:container
 
 # Build entity data
-data modify storage spawnanimations:temp ArmorItemsRetrieve set value [{},{},{},{}]
-data modify storage spawnanimations:temp HandItemsRetrieve set value [{},{}]
+data modify storage spawnanimations:temp equipment_retrieve set value {}
 
 # Copy Armor Items in correct order
-data modify storage spawnanimations:temp ArmorItemsRetrieve[0] set from storage spawnanimations:temp ArmorItems[0].item.components.minecraft:container[0].item
-data modify storage spawnanimations:temp ArmorItemsRetrieve[1] set from storage spawnanimations:temp ArmorItems[1].item.components.minecraft:container[0].item
-data modify storage spawnanimations:temp ArmorItemsRetrieve[2] set from storage spawnanimations:temp ArmorItems[2].item.components.minecraft:container[0].item
-data modify storage spawnanimations:temp ArmorItemsRetrieve[3] set from storage spawnanimations:temp ArmorItems[3].item.components.minecraft:container[0].item
+data modify storage spawnanimations:temp equipment_retrieve.feet set from storage spawnanimations:temp equipment[0].item.components.minecraft:container[0].item
+data modify storage spawnanimations:temp equipment_retrieve.legs set from storage spawnanimations:temp equipment[1].item.components.minecraft:container[0].item
+data modify storage spawnanimations:temp equipment_retrieve.chest set from storage spawnanimations:temp equipment[2].item.components.minecraft:container[0].item
+data modify storage spawnanimations:temp equipment_retrieve.head set from storage spawnanimations:temp equipment[3].item.components.minecraft:container[0].item
 
 # Copy Hand Items in correct order
-data modify storage spawnanimations:temp HandItemsRetrieve[0] set from storage spawnanimations:temp ArmorItems[4].item.components.minecraft:container[0].item
-data modify storage spawnanimations:temp HandItemsRetrieve[1] set from storage spawnanimations:temp ArmorItems[5].item.components.minecraft:container[0].item
+data modify storage spawnanimations:temp equipment_retrieve.mainhand set from storage spawnanimations:temp equipment[4].item.components.minecraft:container[0].item
+data modify storage spawnanimations:temp equipment_retrieve.offhand set from storage spawnanimations:temp equipment[5].item.components.minecraft:container[0].item
 
 # Restore data
-data modify entity @s ArmorItems set from storage spawnanimations:temp ArmorItemsRetrieve
-data modify entity @s HandItems set from storage spawnanimations:temp HandItemsRetrieve
+data modify entity @s equipment set from storage spawnanimations:temp equipment_retrieve

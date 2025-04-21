@@ -6,7 +6,7 @@
 # New save format now uses only one chest item. If it's gone, we can't recover anything
 
 # Remove container item
-execute if data entity @s ArmorItems[0].components.minecraft:custom_data.TsSaRemove run data modify entity @s ArmorItems[0] set value {}
+execute if data entity @s equipment.body.components.minecraft:custom_data.TsSaRemove run data remove entity @s equipment.body
 
 tag @s remove ts.sa.ehs.saved
 

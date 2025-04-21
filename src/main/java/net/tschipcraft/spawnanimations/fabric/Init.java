@@ -15,6 +15,7 @@ public class Init implements ModInitializer {
 			// Directly reference a slf4j logger
 			LOGGER = LoggerFactory.getLogger("spawnanimations");
 		} catch (NoClassDefFoundError ignored) {
+			// No logging
 		}
 	}
 
@@ -25,15 +26,16 @@ public class Init implements ModInitializer {
 			// Build config class
 			Config.init(LOGGER.getName(), Config.class);
 
-			LOGGER.info("[Spawn Animations] Registering server started event...");
+			LOGGER.info("[Spawn Animations] Registering server started event ...");
 			ServerLifecycleEvents.SERVER_STARTED.register((server) -> {
 				if (FabricLoader.getInstance().isModLoaded("midnightlib")) {
 					// Use MidnightLib features
-					LOGGER.info("[Spawn Animations] Sending global config to world...");
+					LOGGER.info("[Spawn Animations] Sending global config to world ...");
 					sendConfig.sendConfig(server);
 				}
 			});
 		}
 		if (LOGGER != null) LOGGER.info("[Spawn Animations] Loaded Spawn Animations by Tschipcraft successfully!");
 	}
+
 }

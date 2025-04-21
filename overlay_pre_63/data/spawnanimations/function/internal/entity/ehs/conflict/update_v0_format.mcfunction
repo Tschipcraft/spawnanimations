@@ -22,9 +22,8 @@ execute if items entity @s armor.legs * run data modify entity @s ArmorItems[2] 
 execute unless items entity @s armor.legs * run data modify entity @s ArmorItems[1] set from storage spawnanimations:temp ArmorItems[0].components.minecraft:container[1].item
 # If leg slot item is not in leg_armor, but chest slot is already set; move chest slot item to head slot and leg slot item to chest slot
 execute unless items entity @s armor.legs #minecraft:leg_armor if items entity @s armor.chest * run data modify entity @s ArmorItems[3] set from entity @s ArmorItems[2]
-execute unless items entity @s armor.legs #minecraft:leg_armor if items entity @s armor.chest * run data modify entity @s ArmorItems[2] set from entity @s ArmorItems[1]
 # If leg slot item is not in leg_armor and chest slot is empty; move leg slot item to chest slot
-execute unless items entity @s armor.legs #minecraft:leg_armor unless items entity @s armor.chest * run data modify entity @s ArmorItems[2] set from entity @s ArmorItems[1]
+execute unless items entity @s armor.legs #minecraft:leg_armor run data modify entity @s ArmorItems[2] set from entity @s ArmorItems[1]
 # If leg slot item is not in leg_armor, clear leg slot
 execute unless items entity @s armor.legs #minecraft:leg_armor run data modify entity @s ArmorItems[1] set value {}
 

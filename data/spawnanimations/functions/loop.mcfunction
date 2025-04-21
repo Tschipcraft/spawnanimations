@@ -7,7 +7,7 @@ schedule function spawnanimations:loop 5t
 execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_verify,tag=!smithed.strict,tag=!ignore.global] run function spawnanimations:internal/entity/ehs/supply_invisibility
 
 ## Check for old format (post-1.20.5)
-function spawnanimations:internal/entity/ehs/check_for_old_format
+function spawnanimations:internal/entity/ehs/check_for_old_v0_format
 
 ## Validate hidden entities
 execute as @e[type=#spawnanimations:can_wear_armor,tag=ts.sa.to_verify,tag=ts.sa.ehs.saved] unless predicate spawnanimations:validate at @s run function spawnanimations:internal/entity/ehs/conflict/evaluate

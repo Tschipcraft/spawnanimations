@@ -1,0 +1,6 @@
+@targets 24w21a..25w02a
+@changes function calls and predicates
+ 
+- Old text component format
+- Old `ArmorItems` and `HandItems` NBT format
+- Armor is stored in the armor.feet slot instead of the armor.body slot
