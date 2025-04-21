@@ -59,28 +59,33 @@ jobs:
               LOWER_DP=$(jq -r '.pack.supported_formats[0]' pack.mcmeta)
               UPPER_DP=$(jq -r '.pack.supported_formats[1]' pack.mcmeta)
             else
-              echo "::error:: pack.mcmeta not found!"
+              echo "::error:: pack.mcmeta file not found!"
               exit 1
             fi
             echo "Lower data pack format: $LOWER_DP, Upper: $UPPER_DP"
 
             echo "Fetching versions from Spyglass API..."
             API_JSON=$(curl -s https://api.spyglassmc.com/mcje/versions || true)
-            if [ -z "$API_JSON" ]; then
+            if [ -z "$API_JSON" ] || ! echo "$API_JSON" | jq empty > /dev/null 2>&1; then
               echo "::error:: Spyglass API unreachable!"
+              echo " Response: $API_JSON"
               exit 1
             fi
 
             # Determine MC_LOWER: oldest version matching LOWER_DP
             # LIMITATION: Mod loaders don't accept snapshot versions, so we assume lower pack format is a release (and not a snapshot)
             MC_LOWER=$(echo "$API_JSON" | jq -r --argjson lower_dp "$LOWER_DP" '[.[] | select(.data_pack_version == $lower_dp and .type == "release")] | sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | .[0].id')
-            if [ "$MC_LOWER" = "null" ]; then
+            if [ -z "$MC_LOWER" ] || [ "$MC_LOWER" = "null" ]; then
               echo "::error:: Expected a release version for pack format ($LOWER_DP), but none was found!"
               exit 1
             fi
 
             # Determine MC_UPPER: newest version matching UPPER_DP
             CHOSEN_UPPER_OBJ=$(echo "$API_JSON" | jq -c --argjson upper_dp "$UPPER_DP" '[.[] | select(.data_pack_version == $upper_dp)] | sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | reverse | .[0]')
+            if [ -z "$CHOSEN_UPPER_OBJ" ] || [ "$CHOSEN_UPPER_OBJ" = "null" ]; then
+              echo "::error:: Expected a version for pack format ($UPPER_DP), but none was found!"
+              exit 1
+            fi
             MC_UPPER=$(echo "$CHOSEN_UPPER_OBJ" | jq -r '.id')
 
             echo "Found MC_LOWER=$MC_LOWER, MC_UPPER=$MC_UPPER"
@@ -217,19 +222,19 @@ jobs:
       - name: Upload artifacts
         id: upload
         uses: actions/upload-artifact@v4
-        if: github.event.inputs.dry_run == true
+        if: github.event.inputs.dry_run == 'true'
         with:
-          name: "${{ github.event.repository.name }} v${{ env.TAG }} Test Builds (Unzip Me)"
+          name: "${{ github.event.repository.name }} v${{ github.event.inputs.tag }} Test Builds (Unzip Me)"
           path: |
-            ./${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
-            ./${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
-            ./${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-resourcepack.zip
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-resourcepack.zip
 
       # Upload
       - name: Upload data pack version to Modrinth
         id: upload_modrinth_dp
         uses: Kir-Antipov/mc-publish@v3.3
-        if: steps.check_datapack_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == false
+        if: steps.check_datapack_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
         with:
           modrinth-id: zrzYrlm0
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
@@ -244,12 +249,12 @@ jobs:
           loaders: |
             datapack
           files: |
-            ./${{ github.event.repository.name }}-*.zip
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
       
       - name: Upload mod version to Modrinth
         id: upload_modrinth_mod
         uses: Kir-Antipov/mc-publish@v3.3
-        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == false
+        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
         with:
           modrinth-id: zrzYrlm0
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
@@ -269,16 +274,16 @@ jobs:
             midnightlib(optional){modrinth:codAaoxh}
           loaders: |
             fabric
-            forge
             quilt
+            forge
             neoforge
           files: |
-            ./${{ github.event.repository.name }}-*-mod.jar
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
 
       - name: Upload data pack version to CurseForge
         id: upload_curseforge_dp
         uses: Kir-Antipov/mc-publish@v3.3
-        if: steps.check_datapack_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == false
+        if: steps.check_datapack_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
         with:
           curseforge-id: 811803
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
@@ -293,12 +298,12 @@ jobs:
           loaders: |
             datapack
           files: |
-            ./${{ github.event.repository.name }}-*.zip
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
 
       - name: Upload mod version to CurseForge
         id: upload_curseforge_mod
         uses: Kir-Antipov/mc-publish@v3.3
-        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == false
+        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
         with:
           curseforge-id: 1223719
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
@@ -322,15 +327,15 @@ jobs:
             forge
             neoforge
           files: |
-            ./${{ github.event.repository.name }}-*-mod.jar
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
 
       - name: Add changelog header for GitHub release
-        if: github.event.inputs.dry_run == false
+        if: github.event.inputs.dry_run == 'false'
         run: sed -i '1i_Changelog:_' CHANGES.md
       - name: Upload outputs to GitHub releases
         id: upload_github
         uses: Kir-Antipov/mc-publish@v3.3
-        if: github.event.inputs.dry_run == false
+        if: github.event.inputs.dry_run == 'false'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-tag: v${{ github.event.inputs.tag }}
@@ -341,7 +346,7 @@ jobs:
           changelog-file: CHANGES.md
 
           files: |
-           ./${{ github.event.repository.name }}-*.@(zip|jar)
+           ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}*.@(zip|jar)
 
       # Build summary
       - name: Set job summary
@@ -355,7 +360,7 @@ jobs:
               <img alt=\"✅ Success\" src=\"https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/success.svg\">
             </picture><br>
 
-            **${{ github.event.repository.name }} v${{ github.event.inputs.tag }}** for **mc${{ env.MC_HUMAN_VERSION_RANGE }}** published successfully!
+            **${{ github.event.repository.name }} v${{ github.event.inputs.tag }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** published successfully!
 
             [View Changelog](https://github.com/${{ github.repository }}/blob/v${{ github.event.inputs.tag }}/CHANGES.md)
 

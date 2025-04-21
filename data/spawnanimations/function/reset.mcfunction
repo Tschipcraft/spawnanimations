@@ -11,8 +11,13 @@ execute as @e[tag=ts.sa.verify] at @s run function spawnanimations:internal/anim
 # Reset checked items
 tag @e[type=minecraft:item,tag=ts.sa.i.checked] remove ts.sa.i.checked
 
+# Reset advancements
+scoreboard players reset @a tschipcraft.menu
+scoreboard players enable @a tschipcraft.menu
+advancement revoke @a only tschipcraft:menu
+
 # Reschedule loop
 schedule clear spawnanimations:loop
 schedule function spawnanimations:loop 2s
 
-say ⏏ Successfully resetted Spawn Animations!
+say ⏏ Spawn Animations successfully reset!

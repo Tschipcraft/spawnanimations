@@ -79,15 +79,16 @@ jobs:
               LOWER_DP=$(jq -r '.pack.supported_formats[0]' pack.mcmeta)
               UPPER_DP=$(jq -r '.pack.supported_formats[1]' pack.mcmeta)
             else
-              echo "::error:: pack.mcmeta not found!"
+              echo "::error:: pack.mcmeta file not found!"
               exit 1
             fi
             echo "Lower data pack format: $LOWER_DP, Upper: $UPPER_DP"
 
             echo "Fetching versions from Spyglass API..."
             API_JSON=$(curl -s https://api.spyglassmc.com/mcje/versions || true)
-            if [ -z "$API_JSON" ]; then
+            if [ -z "$API_JSON" ] || ! echo "$API_JSON" | jq empty > /dev/null 2>&1; then
               echo "::warning:: Spyglass API unreachable, using fallback values. The annotated Minecraft versions may not be accurate."
+              echo " Response: $API_JSON"
               ENDPOINT_DOWN=true
             else
               ENDPOINT_DOWN=false
@@ -110,13 +111,17 @@ jobs:
               # Determine MC_LOWER: oldest version matching LOWER_DP
               # LIMITATION: Mod loaders don't accept snapshot versions, so we assume lower pack format is a release (and not a snapshot)
               MC_LOWER=$(echo "$API_JSON" | jq -r --argjson lower_dp "$LOWER_DP" '[.[] | select(.data_pack_version == $lower_dp and .type == "release")] | sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | .[0].id')
-              if [ "$MC_LOWER" = "null" ]; then
+              if [ -z "$MC_LOWER" ] || [ "$MC_LOWER" = "null" ]; then
                 echo "::error:: Expected a release version for pack format ($LOWER_DP), but none was found!"
                 exit 1
               fi
 
               # Determine MC_UPPER: newest version matching UPPER_DP
               CHOSEN_UPPER_OBJ=$(echo "$API_JSON" | jq -c --argjson upper_dp "$UPPER_DP" '[.[] | select(.data_pack_version == $upper_dp)] | sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | reverse | .[0]')
+              if [ -z "$CHOSEN_UPPER_OBJ" ] || [ "$CHOSEN_UPPER_OBJ" = "null" ]; then
+                # If no version is found, use the latest version from the API
+                CHOSEN_UPPER_OBJ=$(echo "$API_JSON" | jq -c 'sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | reverse | .[0]')
+              fi
               MC_UPPER=$(echo "$CHOSEN_UPPER_OBJ" | jq -r '.id')
 
               echo "Found MC_LOWER=$MC_LOWER, MC_UPPER=$MC_UPPER"
@@ -291,7 +296,7 @@ jobs:
             <img alt="✅ Success" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/success.svg">
           </picture><br>
 
-          ${{ github.event.repository.name }} v${{ env.TAG }} for mc${{ env.MC_HUMAN_VERSION_RANGE }} built successfully! [See changelog](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGES.md)
+          **${{ github.event.repository.name }} v${{ env.TAG }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** built successfully! [See changes since last release](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGES.md).
 
           [Download via nightly.link](https://nightly.link/${{ github.repository }}/actions/runs/${{ github.run_id }})
 

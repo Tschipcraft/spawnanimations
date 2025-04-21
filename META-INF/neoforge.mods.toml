@@ -22,6 +22,7 @@ displayURL="https://modrinth.com/mod/zrzYrlm0"
 issueTrackerURL="https://github.com/Tschipcraft/spawnanimations/issues"
 updateJSONURL="https://api.modrinth.com/updates/zrzYrlm0/forge_updates.json?neoforge=only"
 displayTest="IGNORE_SERVER_VERSION"
+features={ java_version = "[21,)" }
 
 [[dependencies.spawnanimations]]
     modId="minecraft"
@@ -37,7 +38,7 @@ displayTest="IGNORE_SERVER_VERSION"
     ordering="NONE"
     side="BOTH"
     referralUrl="https://modrinth.com/mod/codAaoxh/versions?l=neoforge"
-    reason="For global settings across all worlds."
+    reason="Global settings across all worlds"
 
 [modproperties.spawnanimations]
     catalogueItemIcon="minecraft:zombie_spawn_egg"

@@ -22,6 +22,7 @@ displayURL="https://modrinth.com/mod/zrzYrlm0"
 issueTrackerURL="https://github.com/Tschipcraft/spawnanimations/issues"
 updateJSONURL="https://api.modrinth.com/updates/zrzYrlm0/forge_updates.json?forge=only"
 displayTest="IGNORE_SERVER_VERSION"
+features={ java_version = "[17,)" }
 
 [[dependencies.spawnanimations]]
     modId="minecraft"
@@ -36,6 +37,7 @@ displayTest="IGNORE_SERVER_VERSION"
     versionRange="[1.0.0,)"
     ordering="NONE"
     side="BOTH"
+    referralUrl="https://modrinth.com/mod/codAaoxh/versions?l=forge"
 
 [modproperties.spawnanimations]
     catalogueItemIcon="minecraft:zombie_spawn_egg"

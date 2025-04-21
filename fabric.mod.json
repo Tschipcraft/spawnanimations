@@ -22,7 +22,8 @@
   },
   "depends": {
     "minecraft": "${mc_version_range_fabric}",
-    "fabric-api": ">=0.34.0"
+    "fabric": ">=0.34.0",
+    "java": ">=8"
   },
   "recommends": {
     "modmenu": "*",

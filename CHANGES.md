@@ -1,6 +1,10 @@
-- **Added support for Minecraft 1.21.5** 📔
-  - Updated to work with the new equipment NBT format, new text component format, FallDistance NBT rename, and potion entity ID renames
-  - Hide worn armor and tools now uses the unified armor.body slot instead of armor.feet for 1.21.5 and above to allow better late loot recovery
+- **Added support for Minecraft 1.21.5** 🌸
+  - Updated to work with new equipment NBT format, new text component format, FallDistance NBT renaming, and potion entity ID renaming
+  - Hide worn armor and tools now uses the unified `armor.body` slot instead of `armor.feet` in 1.21.5 and above to allow better late loot recovery
+- **Added native NeoForge support** (closes [#32](https://github.com/Tschipcraft/spawnanimations/issues/32), [#18](https://github.com/Tschipcraft/spawnanimations/issues/18))
 - Hardened the Play animation on unsupported blocks option
-  - Fixed incompatibility with PandaAntiPermanentBlockBreak mod (closes [#38](https://github.com/Tschipcraft/spawnanimations/issues/38))
+  - Fixed incompatibility with [PandaAntiPermanentBlockBreak](https://modrinth.com/mod/Tb16z0yT) mod (closes [#38](https://github.com/Tschipcraft/spawnanimations/issues/38))
+- Added `is_riding` and `has_passengers` exclusion checks to the loop, fixing zombies not being excluded when riding zombie horses from the [Zombie Horse Spawn](https://modrinth.com/mod/owDBGfRd) mod in 1.20.1
 - Fixed mobs not adjusting their animation speed during their animation
+- Fixed version checker messages not being displayed
+- Annotated required java version for mod versions

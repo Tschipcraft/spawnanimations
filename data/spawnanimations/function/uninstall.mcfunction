@@ -22,6 +22,7 @@ scoreboard objectives remove ts.sa.settings
 scoreboard objectives remove ts.sa.distance
 
 scoreboard objectives remove tschipcraft.menu
+execute unless score $global tvc_ignore matches 1 run scoreboard objectives remove tvc_ignore
 
 scoreboard objectives remove ts.sa.e.y
 scoreboard objectives remove ts.sa.e.speed

@@ -17,5 +17,19 @@
       "condition": "minecraft:reference",
       "name": "spawnanimations:attacking"
     }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:is_riding"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "spawnanimations:has_passengers"
+    }
   }
 ]
