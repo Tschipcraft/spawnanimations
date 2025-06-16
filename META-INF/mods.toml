@@ -39,5 +39,13 @@ features={ java_version = "[17,)" }
     side="BOTH"
     referralUrl="https://modrinth.com/mod/codAaoxh/versions?l=forge"
 
+[[dependencies.spawnanimations]]
+    modId="mr_spawn_animationscompats"
+    mandatory=false
+    versionRange="[1.0,)"
+    ordering="NONE"
+    side="BOTH"
+    referralUrl="https://modrinth.com/mod/ofDka6PS/versions?l=forge"
+
 [modproperties.spawnanimations]
     catalogueItemIcon="minecraft:zombie_spawn_egg"
