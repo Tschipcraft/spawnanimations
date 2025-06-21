@@ -1,2 +1,3 @@
 - **Added support for Minecraft 1.21.6** ☁️
 - Fixed 1.21.5 NeoForge crash when installed alongside MidnightLib
+- Slightly lowered the volume of dig up sounds ([#39](https://github.com/Tschipcraft/spawnanimations/issues/39))
