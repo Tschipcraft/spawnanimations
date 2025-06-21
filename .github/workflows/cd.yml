@@ -246,6 +246,8 @@ jobs:
           version: ${{ github.event.inputs.tag }}
           changelog-file: CHANGES.md
 
+          dependencies: |
+            mr_spawn_animationscompats(optional){modrinth:ofDka6PS}
           loaders: |
             datapack
           files: |
@@ -269,6 +271,7 @@ jobs:
           dependencies: |
             fabric-api(required){modrinth:P7dR8mSH}
             qsl(required){modrinth:qvIfYCYJ}
+            mr_spawn_animationscompats(optional){modrinth:ofDka6PS}
             modmenu(optional){modrinth:mOgUt4GM}
             modmenu-badges-lib(optional){modrinth:eUw8l2Vi}
             midnightlib(optional){modrinth:codAaoxh}

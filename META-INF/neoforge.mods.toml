@@ -35,10 +35,19 @@ features={ java_version = "[21,)" }
     modId="midnightlib"
     type="optional"
     versionRange="[1.0.0,)"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"
     referralUrl="https://modrinth.com/mod/codAaoxh/versions?l=neoforge"
     reason="Global settings across all worlds"
+
+[[dependencies.spawnanimations]]
+    modId="mr_spawn_animationscompats"
+    type="optional"
+    versionRange="[1.0,)"
+    ordering="NONE"
+    side="BOTH"
+    referralUrl="https://modrinth.com/mod/ofDka6PS/versions?l=neoforge"
+    reason="Compatibility with other mods"
 
 [modproperties.spawnanimations]
     catalogueItemIcon="minecraft:zombie_spawn_egg"

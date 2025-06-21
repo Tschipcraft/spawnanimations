@@ -28,7 +28,8 @@
   "recommends": {
     "modmenu": "*",
     "modmenu-badges-lib": "*",
-    "midnightlib": "*"
+    "midnightlib": "*",
+    "mr_spawn_animationscompats": "*"
   },
   "custom": {
     "modmenu": {
