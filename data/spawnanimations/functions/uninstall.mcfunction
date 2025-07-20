@@ -17,6 +17,9 @@ scoreboard objectives remove ts.sa.welcome
 scoreboard objectives remove ts.sa.x
 scoreboard objectives remove ts.sa.y
 scoreboard objectives remove ts.sa.z
+scoreboard objectives remove ts.sa.prev_x
+scoreboard objectives remove ts.sa.prev_y
+scoreboard objectives remove ts.sa.prev_z
 
 scoreboard objectives remove ts.sa.settings
 scoreboard objectives remove ts.sa.distance

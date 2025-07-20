@@ -1,0 +1,4 @@
+@targets 24w11a..24w20a
+@changes predicates
+ 
+- `custom_data` now uses a sub predicate

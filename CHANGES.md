@@ -1,1 +1,3 @@
-- **Added support for Minecraft 1.21.7** 💿
+- Improved performance by refactoring entity activation distance calculations to bundle and cache position data retrieval calls, and updating batch activation logic (up to 1 ms faster per tick!)
+- Fixed v0 save format not correctly upgrading to v1 from 24w11a to 24w20a (affecting major releases 1.20.5 and 1.20.6)
+- Improved armor save/resolve functions to include the vanishing curse enchantment in the root proxy chest item

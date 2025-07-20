@@ -16,6 +16,6 @@ data modify storage spawnanimations:temp HandItems[0] merge value {Slot:0b}
 data modify storage spawnanimations:temp HandItems[1] merge value {Slot:1b}
 
 # Copy to entity
-data merge entity @s {ArmorItems:[{id:"minecraft:chest",Count:1b,tag:{TsSaRemove:1b}},{id:"minecraft:chest",Count:1b,tag:{TsSaRemove:1b}},{},{}],HandItems:[]}
+data merge entity @s {ArmorItems:[{id:"minecraft:chest",Count:1b,tag:{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],TsSaRemove:1b}},{id:"minecraft:chest",Count:1b,tag:{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],TsSaRemove:1b}},{},{}],HandItems:[]}
 data modify entity @s ArmorItems[0].tag.BlockEntityTag.Items set from storage spawnanimations:temp ArmorItems
 data modify entity @s ArmorItems[1].tag.BlockEntityTag.Items set from storage spawnanimations:temp HandItems

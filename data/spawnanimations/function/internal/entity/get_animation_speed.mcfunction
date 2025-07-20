@@ -1,5 +1,5 @@
 ##by Tschipcraft
-# This function sets the ts.sa.e.speed scoreboard depending on speed and slowness effects of the current entity (@s)
+# Sets the ts.sa.e.speed scoreboard value depending on speed and slowness effects of the current entity (@s)
 
 scoreboard players set @s ts.sa.e.speed 0
 execute if predicate spawnanimations:animation_speed/speed0 run scoreboard players add @s ts.sa.e.speed 1

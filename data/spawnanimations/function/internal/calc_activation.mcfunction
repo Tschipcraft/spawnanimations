@@ -2,9 +2,10 @@
 # @s/~ ~ ~ is tested entity; $global is player position
 
 # Get position
-execute store result score @s ts.sa.x run data get entity @s Pos[0]
-execute store result score @s ts.sa.y run data get entity @s Pos[1]
-execute store result score @s ts.sa.z run data get entity @s Pos[2]
+data modify storage spawnanimations:temp Pos set from entity @s Pos
+execute store result score @s ts.sa.x run data get storage spawnanimations:temp Pos[0]
+execute store result score @s ts.sa.y run data get storage spawnanimations:temp Pos[1]
+execute store result score @s ts.sa.z run data get storage spawnanimations:temp Pos[2]
 
 # Calculate diff
 scoreboard players operation @s ts.sa.x -= $global ts.sa.x
@@ -12,12 +13,11 @@ scoreboard players operation @s ts.sa.y -= $global ts.sa.y
 scoreboard players operation @s ts.sa.z -= $global ts.sa.z
 
 # Make sure value is positive
-scoreboard players set $minus ts.sa.x -1
-execute if score @s ts.sa.x matches ..0 run scoreboard players operation @s ts.sa.x *= $minus ts.sa.x
-execute if score @s ts.sa.y matches ..0 run scoreboard players operation @s ts.sa.y *= $minus ts.sa.x
-execute if score @s ts.sa.z matches ..0 run scoreboard players operation @s ts.sa.z *= $minus ts.sa.x
+execute if score @s ts.sa.x matches ..0 run scoreboard players operation @s ts.sa.x *= #minus ts.sa.x
+execute if score @s ts.sa.y matches ..0 run scoreboard players operation @s ts.sa.y *= #minus ts.sa.x
+execute if score @s ts.sa.z matches ..0 run scoreboard players operation @s ts.sa.z *= #minus ts.sa.x
 
-# Add dis together
+# Add distances together
 scoreboard players operation @s ts.sa.x += @s ts.sa.y
 scoreboard players operation @s ts.sa.x += @s ts.sa.z
 
