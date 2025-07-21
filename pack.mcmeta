@@ -20,6 +20,10 @@
         "directory": "overlay_39"
       },
       {
+        "formats": [45,48],
+        "directory": "overlay_pre_49"
+      },
+      {
         "formats": [45,62],
         "directory": "overlay_pre_63"
       }

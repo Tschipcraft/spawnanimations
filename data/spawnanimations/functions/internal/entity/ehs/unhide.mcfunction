@@ -9,5 +9,6 @@ execute as @s[tag=ts.sa.ehs.saved] run function spawnanimations:internal/entity/
 
 # Entity specific
 execute if entity @s[type=minecraft:creeper] run function spawnanimations:internal/entity/ehs/entity_specific/creeper/unhide
+execute as @s[tag=ts.sa.ehs.shrunk] run function spawnanimations:internal/entity/ehs/entity_specific/emissive_layer/unhide
 
 tag @s remove ts.sa.hidden

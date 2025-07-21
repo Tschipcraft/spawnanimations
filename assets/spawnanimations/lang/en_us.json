@@ -1,4 +1,8 @@
 {
+  "modmenu.summaryTranslation.spawnanimations": "Hostile mobs dig out of the ground or poof into existence when they spawn!",
+  "modmenu.descriptionTranslation.spawnanimations": "Hostile mobs dig out of the ground or poof into existence when they spawn!\n§lWorks with:§r Zombies, Husks, Drowned, Skeletons, Strays, Bogged, Spiders, Cave Spiders, Creepers, Slimes, Magma Cubes, Wither Skeletons, Hoglins, Zombified Piglins, Striders, Enderman and Giants.\nThis data pack is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.\nExecute the command §o/function §ospawnanimations:settings§r for a world-specific settings menu and/or install MidnightLib for global settings across all worlds.",
+  "fml.menu.mods.info.description.spawnanimations": "Hostile mobs dig out of the ground or poof into existence when they spawn!\n\n§lWorks with:§r Zombies, Husks, Drowned, Skeletons, Strays, Bogged, Spiders, Cave Spiders, Creepers, Slimes, Magma Cubes, Wither Skeletons, Hoglins, Zombified Piglins, Striders, Enderman and Giants.\n\nThis data pack is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.\n\nExecute the command §o/function §ospawnanimations:settings§r for a world-specific settings menu and/or install MidnightLib for global settings across all worlds.",
+
   "spawnanimations.midnightconfig.title": "Spawn Animations Configuration",
   "spawnanimations.midnightconfig.empty": "",
   "spawnanimations.midnightconfig.configure_ingame": "§dℹ Info:§r§f To configure this data pack on a world-to-world basis,",
@@ -13,7 +17,7 @@
   "spawnanimations.midnightconfig.activation_distance": "Activation Distance",
   "spawnanimations.midnightconfig.activation_distance.tooltip": "Default: §a20 blocks§f\nMobs closer to a player than this value will play the animation.\nSetting this to 0 will use the world-specific value.",
   "spawnanimations.midnightconfig.activation_mode": "Activation Mode",
-  "spawnanimations.midnightconfig.activation_mode.tooltip": "Default: §aClassic§f\n§nClassic§r: Out of range mobs will stay hidden until a player is in range\n§nVanilla§r: Out of range mobs will spawn normally",
+  "spawnanimations.midnightconfig.activation_mode.tooltip": "Default: §aClassic§f\n§nClassic§r: Out of range mobs will stay hidden until a player is in range\n§nVanilla§r: Out of range mobs will spawn normally\nWhen set to Vanilla, it is recommended to set the activation distance to at least 25 blocks to see the animation",
   "spawnanimations.midnightconfig.hide_worn_armor_and_tools": "Hide worn armor and tools",
   "spawnanimations.midnightconfig.hide_worn_armor_and_tools.tooltip": "Default: §aYes§f\nIf enabled, stores the worn armor and tools in the feet and in some versions leggings slot of a hidden entity.\n§6⚠ Note: This may impact worn armor and tool drop rates from farms when enabled.",
   "spawnanimations.midnightconfig.play_animation_on_unsupported_blocks": "Play block break animation on unsupported blocks",
@@ -26,7 +30,6 @@
   "spawnanimations.midnightconfig.enum.mode.CLASSIC": "§aClassic",
   "spawnanimations.midnightconfig.enum.mode.VANILLA": "§aVanilla",
 
-  "modmenu.summaryTranslation.spawnanimations": "Hostile mobs dig out of the ground or poof into existence when they spawn!",
   "modmenu.donate": "Donate",
   "modmenu.modrinth": "Modrinth",
   "modmenu.curseforge": "CurseForge",

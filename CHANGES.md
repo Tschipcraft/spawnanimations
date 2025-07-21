@@ -1,3 +1,7 @@
-- Improved performance by refactoring entity activation distance calculations to bundle and cache position data retrieval calls, and updating batch activation logic (up to 1 ms faster per tick!)
+- **Entities with emissive layers are now properly hidden** (Endermen, Spiders, and Cave Spiders) (closes [#25](https://github.com/Tschipcraft/spawnanimations/issues/25))
+- Improved performance by refactoring entity activation distance calculations to bundle and cache position data retrieval calls, and updating batch activation logic (the whole data pack is now up to 1ms (~45%ish) faster per tick!)
+- Modified the attack predicate of the secondary dig-up requirements so that it disregards the Y-distance. This allows mobs to, for example, appear at the bottom of pillars, if a player decides to build up during the night
+- Added an activation distance recommendation message when using the vanilla activation mode
+- Fixed possibility for hidden falling mobs to lose their fall distance NBT when appearing
 - Fixed v0 save format not correctly upgrading to v1 from 24w11a to 24w20a (affecting major releases 1.20.5 and 1.20.6)
 - Improved armor save/resolve functions to include the vanishing curse enchantment in the root proxy chest item
