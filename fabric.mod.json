@@ -31,6 +31,9 @@
     "midnightlib": "*",
     "mr_spawn_animationscompats": "*"
   },
+  "suggests": {
+    "pehkui": ">=3.4.0"
+  },
   "custom": {
     "modmenu": {
       "links": {

@@ -17,13 +17,13 @@ on:
         description: 'Set to true to skip command validation'
         required: false
         type: boolean
-        default: false
+        default: true
 
 env:
   # Fallback Lower: when Spyglass API is unreachable
   FALLBACK_MC_LOWER: "1.17"
   # Fallback Upper: when Spyglass API and Mojang API are unreachable
-  FALLBACK_MC_UPPER: "1.21.5"
+  FALLBACK_MC_UPPER: "1.21.8"
 
 jobs:
   deploy:
@@ -189,9 +189,9 @@ jobs:
           echo "  NeoForge range: $MACHINE_RANGE_NEOFORGE"
           echo "  Validator version: $CMD_VALIDATOR_MC"
 
-      # Optionally validate commands
+      # Optionally validate commands (disabled by default upon push due to unrecognized Pehkui commands)
       - name: Validate commands
-        if: ${{ github.event.inputs.skip_check != 'true' }}
+        if: ${{ github.event.inputs.skip_check == 'false' }}
         uses: mcbeet/check-commands@v1
         with:
           source: .
@@ -310,6 +310,6 @@ jobs:
             <img alt="❌ Error" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/error.svg">
           </picture><br>
 
-          The build v${{ env.TAG }} for mc${{ env.MC_HUMAN_VERSION_RANGE }} failed! Please check the action logs for details.
+          The build **v${{ env.TAG }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** failed! Please check the action logs for details.
           EOF
           fi

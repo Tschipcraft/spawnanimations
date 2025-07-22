@@ -2,3 +2,4 @@
 @changes function calls
  
 - Attribute IDs have the old `generic.` prefix
+- Pehkui integration (no port to newer versions exists yet)
