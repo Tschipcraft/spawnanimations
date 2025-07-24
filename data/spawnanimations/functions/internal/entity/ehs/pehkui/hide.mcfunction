@@ -1,5 +1,5 @@
 ##by Tschipcraft
-# Shrinks entities with an emissive layer to lower scale
+# Shrinks entities to a smaller scale to completely hide them
 
 scale delay set pehkui:model_width 0 @s
 scale delay set pehkui:model_height 0 @s

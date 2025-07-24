@@ -1,5 +1,6 @@
 - **Entities with emissive layers are now properly hidden** (Endermen, Spiders, and Cave Spiders) (closes [#25](https://github.com/Tschipcraft/spawnanimations/issues/25))
   - For this feature to work in Minecraft 1.20.4 and below, [Pehkui](https://modrinth.com/project/t5W7Jfwy) must be installed. Pehkui can still be installed in newer versions for smoother poof animations
+- Added config options to enable/disable poof animation ([#40](https://github.com/Tschipcraft/spawnanimations/issues/40)), animation sounds (closes [#39](https://github.com/Tschipcraft/spawnanimations/issues/39)), and hiding emissive mob layers
 - Improved performance by refactoring entity activation distance calculations to bundle and cache position data retrieval calls, and updating batch activation logic (the whole data pack is now up to 1ms (~45%ish) faster per tick!)
 - Modified the attack predicate of the secondary dig-up requirements so that it disregards the Y-distance. This allows mobs to, for example, appear at the bottom of pillars, if a player decides to build up during the night
 - Added an activation distance recommendation message when using the vanilla activation mode

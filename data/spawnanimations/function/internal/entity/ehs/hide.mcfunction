@@ -9,4 +9,4 @@ tag @s add ts.sa.to_hide
 effect give @s invisibility 10 0 true
 
 # Pehkui integration (overlay_pre_49)
-function spawnanimations:internal/entity/ehs/pehkui/hide
+execute if score $hide_emissive ts.sa.settings matches 1..2 run function spawnanimations:internal/entity/ehs/pehkui/hide

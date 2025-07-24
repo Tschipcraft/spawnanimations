@@ -1,5 +1,5 @@
 ##by Tschipcraft
-# Resets entities with an emissive layer that got their scale changed
+# Resets entities that got their scale changed
 
 scale delay set pehkui:model_width 10 @s
 scale delay set pehkui:model_height 10 @s
