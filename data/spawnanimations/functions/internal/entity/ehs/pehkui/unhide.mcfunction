@@ -7,5 +7,6 @@ function spawnanimations:internal/entity/ehs/pehkui/set_easing
 
 scale set pehkui:model_width 1 @s
 scale set pehkui:model_height 1 @s
+execute as @s[tag=ts.sa.ehs.pehkui.hitbox] run function spawnanimations:internal/entity/ehs/pehkui/enderman/unhide
 
 tag @s remove ts.sa.ehs.pehkui.shrunk

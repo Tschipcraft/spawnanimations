@@ -42,6 +42,8 @@ public class Config extends MidnightConfig {
     @Entry
     public static bool hide_emissive_mob_layers = bool.WORLD;
     @Entry
+    public static bool reduce_enderman_particles = bool.WORLD;
+    @Entry
     public static bool play_animation_on_unsupported_blocks = bool.WORLD;
 
 }

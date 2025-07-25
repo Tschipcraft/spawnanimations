@@ -15,6 +15,7 @@ execute as @e[type=#spawnanimations:can_wear_armor,tag=ts.sa.to_verify,tag=ts.sa
 
 # Escape protection for shrunk entities
 execute as @e[type=#spawnanimations:has_emissive_layer,tag=ts.sa.to_verify,tag=ts.sa.ehs.shrunk] at @s run function spawnanimations:internal/entity/ehs/entity_specific/emissive_layer/prevent_enclosure_breach/check_enclosure
+execute if score $enderman_hack ts.sa.settings matches 1..2 as @e[type=minecraft:enderman,tag=ts.sa.to_verify,tag=ts.sa.ehs.pehkui.hitbox] at @s run function spawnanimations:internal/entity/ehs/entity_specific/emissive_layer/prevent_enclosure_breach/check_enclosure
 
 ## Remove problematic items
 execute as @e[type=minecraft:item,tag=!ts.sa.i.checked,tag=!global.ignore] run function spawnanimations:internal/entity/ehs/remove_invalid_item/check

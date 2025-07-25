@@ -1,9 +1,12 @@
 - **Entities with emissive layers are now properly hidden** (Endermen, Spiders, and Cave Spiders) (closes [#25](https://github.com/Tschipcraft/spawnanimations/issues/25))
   - For this feature to work in Minecraft 1.20.4 and below, [Pehkui](https://modrinth.com/project/t5W7Jfwy) must be installed. Pehkui can still be installed in newer versions for smoother poof animations
-- Added config options to enable/disable poof animation ([#40](https://github.com/Tschipcraft/spawnanimations/issues/40)), animation sounds (closes [#39](https://github.com/Tschipcraft/spawnanimations/issues/39)), and hiding emissive mob layers
+- Added config options to enable/disable the poof animation ([#40](https://github.com/Tschipcraft/spawnanimations/issues/40)), animation sounds (closes [#39](https://github.com/Tschipcraft/spawnanimations/issues/39)), reducing the number of particles emitted by hidden Endermen, and hiding emissive mob layers ([#25](https://github.com/Tschipcraft/spawnanimations/issues/25))
 - Improved performance by refactoring entity activation distance calculations to bundle and cache position data retrieval calls, and updating batch activation logic (the whole data pack is now up to 1ms (~45%ish) faster per tick!)
 - Modified the attack predicate of the secondary dig-up requirements so that it disregards the Y-distance. This allows mobs to, for example, appear at the bottom of pillars, if a player decides to build up during the night
+- Improved hide armor and tools option to include the vanishing curse enchantment in the root proxy chest item
 - Added an activation distance recommendation message when using the vanilla activation mode
+- Added a compatibility warning when Tschipcraft's Dynamic Lights v1.8.8 or below is installed
+- Fixed possibility of the poof animaion playing multiple times when "Play Animation on Unsupported Blocks" is off
 - Fixed possibility for hidden falling mobs to lose their fall distance NBT when appearing
 - Fixed v0 save format not correctly upgrading to v1 from 24w11a to 24w20a, affecting major releases 1.20.5 and 1.20.6
-- Improved hide armor and tools option to include the vanishing curse enchantment in the root proxy chest item
+- Changed exclude tag from `exclude` to `ts.sa.exclude`

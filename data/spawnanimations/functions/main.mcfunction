@@ -1,12 +1,12 @@
 ## by Tschipcraft
 
 ## Finish hiding entities
-execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_hide] run function spawnanimations:internal/entity/ehs/hide_exec
+execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_hide,limit=5] run function spawnanimations:internal/entity/ehs/hide_exec
 
 ## Detect new mobs
 # To edit mobs that are affected, see ../tags/entity_types/dig_up_animation.json
 # Normal
-execute if score $version ts.sa.settings matches 2587.. as @e[type=#spawnanimations:dig_up_animation,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!ts.sa.to_hide,tag=!exclude,tag=!smithed.strict,tag=!smithed.block,tag=!global.ignore,tag=!global.ignore.pos,limit=10,sort=arbitrary] run function spawnanimations:internal/animation/dig_up/prepare
+execute if score $version ts.sa.settings matches 2587.. as @e[type=#spawnanimations:dig_up_animation,tag=!ts.sa.verify,tag=!ts.sa.verified,tag=!ts.sa.to_verify,tag=!ts.sa.to_hide,tag=!ts.sa.exclude,tag=!smithed.strict,tag=!smithed.block,tag=!global.ignore,tag=!global.ignore.pos,limit=10,sort=arbitrary] run function spawnanimations:internal/animation/dig_up/prepare
 
 
 ## Animation trigger

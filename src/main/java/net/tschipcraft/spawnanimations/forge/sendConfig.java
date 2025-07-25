@@ -56,6 +56,14 @@ public class sendConfig {
             sendCommand("execute if score $hide_emissive ts.sa.settings matches -1 run scoreboard players set $hide_emissive ts.sa.settings 0", server);
             sendCommand("execute if score $hide_emissive ts.sa.settings matches 2 run scoreboard players set $hide_emissive ts.sa.settings 1", server);
         }
+        if (Config.reduce_enderman_particles == Config.bool.YES) {
+            sendCommand("scoreboard players set $enderman_hack ts.sa.settings 2", server);
+        } else if (Config.reduce_enderman_particles == Config.bool.NO) {
+            sendCommand("scoreboard players set $enderman_hack ts.sa.settings -1", server);
+        } else {
+            sendCommand("execute if score $enderman_hack ts.sa.settings matches -1 run scoreboard players set $enderman_hack ts.sa.settings 0", server);
+            sendCommand("execute if score $enderman_hack ts.sa.settings matches 2 run scoreboard players set $enderman_hack ts.sa.settings 1", server);
+        }
         if (Config.play_animation_on_unsupported_blocks == Config.bool.YES) {
             sendCommand("scoreboard players set $play_unsupport ts.sa.settings 2", server);
         } else if (Config.play_animation_on_unsupported_blocks == Config.bool.NO) {
