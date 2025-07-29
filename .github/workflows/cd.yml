@@ -248,11 +248,37 @@ jobs:
 
           dependencies: |
             mr_spawn_animationscompats(optional){modrinth:ofDka6PS}
+            pehkui(optional){modrinth:t5W7Jfwy}
           loaders: |
             datapack
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
-      
+
+      - name: Upload Forge mod version to Modrinth # Forge mod version is uploaded separately atm due to it not being compatible with Minecraft 1.21.6 or above
+        id: upload_forge_modrinth_mod
+        uses: Kir-Antipov/mc-publish@v3.3
+        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
+        with:
+          modrinth-id: zrzYrlm0
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          game-versions: |
+            >=1.17 <=1.21.5
+          game-version-filter: any
+          fail-mode: skip
+
+          name: "[Mod] Release v${{ github.event.inputs.tag }}"
+          version: ${{ github.event.inputs.tag }}+mod
+          changelog-file: CHANGES.md
+
+          dependencies: |
+            mr_spawn_animationscompats(optional){modrinth:ofDka6PS}
+            midnightlib(optional){modrinth:codAaoxh}
+            pehkui(optional){modrinth:t5W7Jfwy}
+          loaders: |
+            forge
+          files: |
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
+
       - name: Upload mod version to Modrinth
         id: upload_modrinth_mod
         uses: Kir-Antipov/mc-publish@v3.3
@@ -275,10 +301,10 @@ jobs:
             modmenu(optional){modrinth:mOgUt4GM}
             modmenu-badges-lib(optional){modrinth:eUw8l2Vi}
             midnightlib(optional){modrinth:codAaoxh}
+            pehkui(optional){modrinth:t5W7Jfwy}
           loaders: |
             fabric
             quilt
-            forge
             neoforge
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
@@ -298,10 +324,40 @@ jobs:
           version: ${{ github.event.inputs.tag }}
           changelog-file: CHANGES.md
 
+          dependencies: |
+            pehkui(optional){curseforge:319596}
           loaders: |
             datapack
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
+
+      - name: Upload Forge mod version to CurseForge # Same reason as above
+        id: upload_forge_curseforge_mod
+        uses: Kir-Antipov/mc-publish@v3.3
+        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
+        with:
+          curseforge-id: 1223719
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          game-versions: |
+            >=1.17 <=1.21.5
+          game-version-filter: any
+          fail-mode: skip
+
+          name: "Release v${{ github.event.inputs.tag }}"
+          version: ${{ github.event.inputs.tag }}+mod
+          changelog-file: CHANGES.md
+
+          dependencies: |
+            catalogue(optional){curseforge:459701}
+            midnightlib(optional){curseforge:488090}
+            pehkui(optional){curseforge:319596}
+          java: |
+            Java 21
+            Java 17
+          loaders: |
+            forge
+          files: |
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
 
       - name: Upload mod version to CurseForge
         id: upload_curseforge_mod
@@ -321,13 +377,13 @@ jobs:
           dependencies: |
             catalogue(optional){curseforge:459701}
             midnightlib(optional){curseforge:488090}
+            pehkui(optional){curseforge:319596}
           java: |
             Java 21
             Java 17
           loaders: |
             fabric
             quilt
-            forge
             neoforge
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
@@ -400,6 +456,6 @@ jobs:
             <img alt="❌ Error" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/error.svg">
           </picture><br>
 
-          The publish job for v${{ github.event.inputs.tag }} (mc${{ env.MC_HUMAN_VERSION_RANGE }}) failed! Please check the action logs for details.
+          The publish job for **v${{ github.event.inputs.tag }}** (Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}) failed! Please check the action logs for details.
           EOF
           fi

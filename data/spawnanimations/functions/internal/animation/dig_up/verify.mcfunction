@@ -4,6 +4,7 @@ tag @s add ts.sa.verified
 tag @s remove ts.sa.verify
 
 # Reset entity info
+scoreboard players set @s ts.sa.timer 100
 scoreboard players reset @s ts.sa.e.y
 scoreboard players reset @s ts.sa.e.stage
 scoreboard players reset @s ts.sa.e.speed
