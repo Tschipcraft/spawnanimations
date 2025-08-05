@@ -4,6 +4,7 @@
 - Improved performance by refactoring entity activation distance calculations to bundle and cache position data retrieval calls and by updating batch activation logic. The whole project is now up to 45% faster per tick!
 - Modified the attack predicate of the secondary dig-up requirements so that it disregards the Y-distance. This allows mobs to, for example, appear at the bottom of pillars if a player decides to build up during the night
 - Added an activation distance recommendation message when using the Vanilla activation mode
+- Removed the Hoglin from the dig up animation
 - Fixed most compatibility issues with [Hostile Mobs Improve Over Time](https://modrinth.com/project/ku4JD9TH) by adding missing tag recovery logic when preparing an entity for hiding. This should generally improve compatibility with other packs that override entity tags (closes [#26](https://github.com/Tschipcraft/spawnanimations/issues/26))
 - Fixed poof animation playing multiple times when "Play Animation on Unsupported Blocks" is off
 - Fixed possibility of hidden falling mobs losing their fall distance NBT when appearing

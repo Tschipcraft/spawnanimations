@@ -10,9 +10,6 @@ execute if score $version ts.sa.settings matches 1977..2230 run tellraw @a [{"te
 execute if score $version ts.sa.settings matches 1632..1976 run tellraw @a [{"text":"[Spawn Animations] ","color":"gray"},{"text":"\u26a0 Minecraft version ","color":"red"},{"text":"1.14","color":"red","bold": true},{"text":" detected! This pack does not work in 1.14! Please use ","color":"red"},{"text": "1.17 or above", "color":"red","underlined":true},{"text":"!","color":"red"}]
 execute if score $version ts.sa.settings matches 1343..1631 run tellraw @a [{"text":"[Spawn Animations] ","color":"gray"},{"text":"\u26a0 Minecraft version ","color":"red"},{"text":"1.13","color":"red","bold": true},{"text":" detected! This pack does not work in 1.13! Please use ","color":"red"},{"text": "1.17 or above", "color":"red","underlined":true},{"text":"!","color":"red"}]
 
-# Dynamic Lights Notice
-execute if score dynamiclights load.status matches ..18 run tellraw @a [{"text":"[Spawn Animations] ","color":"gray"},{"text":"\u26a0 Please use any version of Tschipcraft's Dynamic Lights above v1.8.8 alongside Spawn Animations!","color":"red"}]
-
 # Pehkui Integration
 scoreboard players set $pehkui_installed ts.sa.settings 0
 function spawnanimations:internal/entity/ehs/pehkui/check_installed

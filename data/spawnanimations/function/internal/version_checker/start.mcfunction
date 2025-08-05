@@ -7,9 +7,6 @@ execute unless score $global tvc_ignore matches 1 if score $version ts.sa.settin
 # Announce escape sequence handling changes
 execute unless score $global tvc_ignore matches 1 if score $version ts.sa.settings matches 4298..4316 run tellraw @a [{"text":"[Spawn Animations] ","color":"gray"},{"text":"!","bold":true,"color":"gold"},{"text":" Due to changes in escape sequence handling, all text menus (including the settings menu) are unavailable from 25w02a through 25w08a.","color":"gold"}]
 
-# Dynamic Lights Notice
-execute if score dynamiclights load.status matches ..18 run tellraw @a [{"text":"[Spawn Animations] ","color":"gray"},{"text":"\u26a0 Please use any version of Tschipcraft's Dynamic Lights above v1.8.8 alongside Spawn Animations!","color":"red"}]
-
 # Pehkui Integration
 scoreboard players set $pehkui_installed ts.sa.settings 0
 function spawnanimations:internal/entity/ehs/pehkui/check_installed
