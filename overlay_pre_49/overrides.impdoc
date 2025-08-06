@@ -1,0 +1,5 @@
+@targets 24w21a..1.21.1
+@changes function calls
+ 
+- Attribute IDs have the old `generic.` prefix
+- Pehkui integration (no port to newer versions exists yet)

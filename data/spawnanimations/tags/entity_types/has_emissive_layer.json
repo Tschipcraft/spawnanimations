@@ -1,0 +1,9 @@
+{
+  "//comment": "Entities specified here have an emissive layer which will not vanish with the invisibility effect. Instead, they will be shrunk to 6.25% of their size to become invisible to players.",
+  "replace": false,
+  "values": [
+    "minecraft:spider",
+    "minecraft:cave_spider",
+    "minecraft:enderman"
+  ]
+}

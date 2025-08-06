@@ -45,9 +45,18 @@ features={ java_version = "[21,)" }
     type="optional"
     versionRange="[1.0,)"
     ordering="NONE"
-    side="BOTH"
+    side="SERVER"
     referralUrl="https://modrinth.com/mod/ofDka6PS/versions?l=neoforge"
     reason="Compatibility with other mods"
+
+[[dependencies.spawnanimations]]
+    modId="pehkui"
+    type="optional"
+    versionRange="[3.4.0,)"
+    ordering="NONE"
+    side="BOTH"
+    referralUrl="https://modrinth.com/mod/t5W7Jfwy/versions?l=neoforge"
+    reason="Completely hiding entities with an emissive layer"
 
 [modproperties.spawnanimations]
     catalogueItemIcon="minecraft:zombie_spawn_egg"

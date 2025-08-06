@@ -7,7 +7,7 @@
     "minecraft:drowned",
     "#minecraft:skeletons",
     "minecraft:piglin",
-    "minecraft:zombified_piglin",
-    "minecraft:piglin_brute"
+    "minecraft:piglin_brute",
+    "minecraft:zombified_piglin"
   ]
 }

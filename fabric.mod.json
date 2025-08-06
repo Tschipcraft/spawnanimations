@@ -26,10 +26,16 @@
     "java": ">=8"
   },
   "recommends": {
-    "modmenu": "*",
-    "modmenu-badges-lib": "*",
     "midnightlib": "*",
     "mr_spawn_animationscompats": "*"
+  },
+  "suggests": {
+    "pehkui": ">=3.4.0",
+    "modmenu": "*",
+    "modmenu-badges-lib": "*"
+  },
+  "conflicts": {
+    "pehkui": "<3.4.0"
   },
   "custom": {
     "modmenu": {

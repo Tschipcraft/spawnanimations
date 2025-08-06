@@ -5,9 +5,16 @@ scoreboard objectives add ts.sa.timer dummy
 scoreboard objectives add ts.sa.count dummy
 scoreboard objectives add ts.sa.welcome trigger
 
+# Activation distance calculation
 scoreboard objectives add ts.sa.x dummy
 scoreboard objectives add ts.sa.y dummy
 scoreboard objectives add ts.sa.z dummy
+scoreboard players set #minus ts.sa.x -1
+
+# Escape protection for shrunk/emissive entities (see emissive_layer in overlay_33)
+scoreboard objectives add ts.sa.prev_x dummy
+scoreboard objectives add ts.sa.prev_y dummy
+scoreboard objectives add ts.sa.prev_z dummy
 
 # Entity properties
 scoreboard objectives add ts.sa.e.y dummy

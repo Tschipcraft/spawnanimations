@@ -4,8 +4,8 @@
   "predicate": {
     "targeted_entity": {
       "distance": {
-        "absolute": {
-          "max": 3
+        "horizontal": {
+          "max": 3.5
         }
       }
     }
