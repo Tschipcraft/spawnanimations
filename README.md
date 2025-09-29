@@ -16,7 +16,7 @@
 Hostile mobs dig out of the ground or poof into existence when they spawn.
 
 **Works with:**
-Zombies, Husks, Drowned, Skeletons, Strays, Bogged, Spiders, Cave Spiders, Creepers, Slimes, Magma Cubes, Wither Skeletons, Hoglins, Zombified Piglins, Striders, Enderman and Giants.
+Zombies, Husks, Drowned, Skeletons, Strays, Bogged, Wither Skeletons, Spiders, Cave Spiders, Creepers, Endermen, Slimes, Magma Cubes, Zombified Piglins, Striders and Giants.
 
 This data pack/mod is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.
 

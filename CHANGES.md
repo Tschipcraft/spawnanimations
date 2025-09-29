@@ -1,1 +1,3 @@
-- Raised entity processing limits to resolve mob farm complications
+- **Added support for Minecraft 1.21.9** 🥉
+- Raised entity processing limits to resolve mob farm complications (Thanks @Fyoncle)
+- Fixed Vanilla activation mode behaving the same way as Classic for activation distances below 25 (closes [#46](https://github.com/Tschipcraft/spawnanimations/issues/46))

@@ -9,3 +9,4 @@ execute store result score $global ts.sa.z run data get storage spawnanimations:
 # Activate entities
 execute if score $activation_dist ts.sa.settings matches 25..100 as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_verify,distance=..100,limit=10,sort=random] at @s run function spawnanimations:internal/calc_activation
 execute if score $activation_dist ts.sa.settings matches 1..24 as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_verify,distance=..25,limit=5,sort=random] at @s run function spawnanimations:internal/calc_activation
+execute if score $activation_mode ts.sa.settings matches -1..0 if score $activation_dist ts.sa.settings matches 1..24 as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_verify,distance=25..,limit=1,sort=random] at @s unless entity @a[gamemode=!spectator,distance=..25] run function spawnanimations:internal/animation/dig_up/check_failed
