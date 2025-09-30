@@ -20,13 +20,13 @@ execute if block ~ ~ ~ minecraft:cobblestone run particle block{block_state:"min
 execute if block ~ ~ ~ minecraft:hay_block run particle block{block_state:"minecraft:hay_block"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ minecraft:gravel run particle block{block_state:"minecraft:gravel"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~0.3 ~ minecraft:snow run particle block{block_state:"minecraft:snow"} ~ ~0.4 ~ 0.1 0 0.1 1 9 normal
+execute if block ~ ~ ~ minecraft:snow_block unless block ~ ~0.3 ~ minecraft:snow run particle block{block_state:"minecraft:snow_block"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ #minecraft:ice run particle block{block_state:"minecraft:ice"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ minecraft:obsidian run particle block{block_state:"minecraft:obsidian"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ minecraft:slime_block run particle block{block_state:"minecraft:slime_block"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 
 # End
 execute if block ~ ~ ~ minecraft:end_stone run particle block{block_state:"minecraft:end_stone"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
-# Chorus
 
 # Nether
 execute if block ~ ~ ~ #minecraft:base_stone_nether run particle block{block_state:"minecraft:netherrack"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
@@ -34,13 +34,6 @@ execute if block ~ ~ ~ #minecraft:nylium run particle block{block_state:"minecra
 execute if block ~ ~ ~ minecraft:nether_bricks run particle block{block_state:"minecraft:nether_bricks"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ #minecraft:soul_fire_base_blocks run particle block{block_state:"minecraft:soul_sand"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ #minecraft:soul_fire_base_blocks run particle minecraft:soul ~ ~0.2 ~ 0.1 0.1 0.1 0.01 1 normal
-
-# Containers
-execute if block ~ ~ ~ minecraft:chest run particle block{block_state:"minecraft:chest"} ~ ~0.2 ~ 0.1 0 0.1 1 3 normal
-execute if block ~ ~ ~ minecraft:trapped_chest run particle block{block_state:"minecraft:trapped_chest"} ~ ~0.2 ~ 0.1 0 0.1 1 3 normal
-execute if block ~ ~ ~ minecraft:ender_chest run particle block{block_state:"minecraft:ender_chest"} ~ ~0.2 ~ 0.1 0 0.1 1 1 normal
-execute if block ~ ~ ~ minecraft:hopper run particle block{block_state:"minecraft:hopper"} ~ ~0.2 ~ 0.1 0 0.1 1 3 normal
-execute if block ~ ~ ~ minecraft:beacon run particle block{block_state:"minecraft:glass"} ~ ~0.2 ~ 0.1 0 0.1 1 3 normal
 
 # Extra mob-specific particles
 execute positioned ~ ~ ~ if entity @s[type=#spawnanimations:particles/nether_mob] run particle lava ~ ~0.4 ~ 0.1 0 0.1 0.01 1 normal

@@ -13,6 +13,7 @@
     "minecraft:hay_block",
     "minecraft:gravel",
     "minecraft:snow",
+    "minecraft:snow_block",
     "#minecraft:ice",
     "minecraft:obsidian",
     "minecraft:slime_block",
@@ -21,11 +22,6 @@
     "#minecraft:nylium",
     "#minecraft:base_stone_nether",
     "#minecraft:soul_fire_base_blocks",
-    "minecraft:lava",
-    "minecraft:chest",
-    "minecraft:trapped_chest",
-    "minecraft:ender_chest",
-    "minecraft:hopper",
-    "minecraft:beacon"
+    "minecraft:lava"
   ]
 }

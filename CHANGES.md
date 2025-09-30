@@ -1,3 +1,7 @@
 - **Added support for Minecraft 1.21.9** 🥉
+  - Updated to work with the new pack.mcmeta syntax
 - Raised entity processing limits to resolve mob farm complications (Thanks @Fyoncle)
 - Fixed Vanilla activation mode behaving the same way as Classic for activation distances below 25 (closes [#46](https://github.com/Tschipcraft/spawnanimations/issues/46))
+- Added native support for snow blocks when playing the dig up animation
+- Removed native support for some container blocks
+- Expanded and reorganized tag lists to include convention tags for improved mod compatibility

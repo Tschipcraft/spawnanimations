@@ -8,6 +8,22 @@
     "minecraft:structure_void",
     {"id": "minecraft:light", "required": false},
     "minecraft:water",
-    "minecraft:snow"
+    "minecraft:snow",
+    "minecraft:chest",
+    "minecraft:trapped_chest",
+    "minecraft:ender_chest",
+    {"id": "#c:chests", "required": false},
+    "minecraft:barrel",
+    {"id": "#c:barrels", "required": false},
+    "minecraft:hopper",
+    "minecraft:beacon",
+    "minecraft:furnace",
+    "minecraft:blast_furnace",
+    "minecraft:smoker",
+    {"id": "#c:player_workstations/furnaces", "required": false},
+    {"id": "#c:villager_job_sites", "required": false},
+    {"id": "#minecraft:fence_gates", "required": false},
+    {"id": "#c:fence_gates", "required": false},
+    {"id": "#c:skulls", "required": false}
   ]
 }
