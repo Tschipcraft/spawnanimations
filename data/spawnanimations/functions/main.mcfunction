@@ -1,7 +1,7 @@
 ## by Tschipcraft
 
 ## Finish hiding entities
-execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_hide,limit=5] run function spawnanimations:internal/entity/ehs/hide_exec
+execute as @e[type=!#spawnanimations:exclude,tag=ts.sa.to_hide,limit=10] run function spawnanimations:internal/entity/ehs/hide_exec
 
 ## Detect new mobs
 # To edit mobs that are affected, see ../tags/entity_types/dig_up_animation.json

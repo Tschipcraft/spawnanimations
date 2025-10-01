@@ -28,3 +28,4 @@ execute as @s[tag=ts.sa.verify] if entity @e[type=!#spawnanimations:exclude,dist
 
 # Prevent animation on unsupported blocks if disabled
 execute as @s[tag=ts.sa.verify] if score $play_unsupport ts.sa.settings matches -1..0 unless block ~ ~-0.5 ~ #spawnanimations:supported run function spawnanimations:internal/animation/dig_up/verify_in_air
+execute as @s[tag=ts.sa.verify] if score $play_unsupport ts.sa.settings matches 1..2 if block ~ ~-0.5 ~ #spawnanimations:exclude run function spawnanimations:internal/animation/dig_up/verify_in_air

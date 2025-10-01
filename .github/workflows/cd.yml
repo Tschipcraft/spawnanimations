@@ -331,35 +331,7 @@ jobs:
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
 
-      - name: Upload Forge mod version to CurseForge # Same reason as above
-        id: upload_forge_curseforge_mod
-        uses: Kir-Antipov/mc-publish@v3.3
-        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
-        with:
-          curseforge-id: 1223719
-          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
-          game-versions: |
-            >=1.17 <=1.21.5
-          game-version-filter: any
-          fail-mode: skip
-
-          name: "Release v${{ github.event.inputs.tag }}"
-          version: ${{ github.event.inputs.tag }}+mod
-          changelog-file: CHANGES.md
-
-          dependencies: |
-            catalogue(optional){curseforge:459701}
-            midnightlib(optional){curseforge:488090}
-            pehkui(optional){curseforge:319596}
-          java: |
-            Java 21
-            Java 17
-          loaders: |
-            forge
-          files: |
-            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
-
-      - name: Upload mod version to CurseForge
+      - name: Upload mod version to CurseForge # Duplicate uploads sadly don't work on CurseForge
         id: upload_curseforge_mod
         uses: Kir-Antipov/mc-publish@v3.3
         if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'

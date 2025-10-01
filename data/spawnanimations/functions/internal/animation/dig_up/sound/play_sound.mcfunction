@@ -17,7 +17,8 @@ execute if block ~ ~ ~ minecraft:cobblestone run playsound minecraft:block.stone
 # Other
 execute if block ~ ~ ~ minecraft:hay_block run playsound minecraft:block.grass.break hostile @a ~ ~ ~ 0.85 0.6
 execute if block ~ ~ ~ #minecraft:wool run playsound minecraft:block.wool.break hostile @a ~ ~ ~ 0.85 0.6
-execute if block ~ ~0.2 ~ minecraft:snow run playsound minecraft:block.snow.break hostile @a ~ ~ ~ 0.85 0.6
+execute if block ~ ~0.3 ~ minecraft:snow run playsound minecraft:block.snow.break hostile @a ~ ~ ~ 0.85 0.6
+execute if block ~ ~ ~ minecraft:snow_block unless block ~ ~0.3 ~ minecraft:snow run playsound minecraft:block.snow.break hostile @a ~ ~ ~ 0.85 0.5
 execute if block ~ ~ ~ #minecraft:ice run playsound minecraft:block.glass.break hostile @a ~ ~ ~ 0.85 0.7
 execute if block ~ ~ ~ minecraft:obsidian run playsound minecraft:block.stone.break hostile @a ~ ~ ~ 0.85 0.4
 execute if block ~ ~ ~ minecraft:slime_block run playsound minecraft:block.slime_block.break hostile @a ~ ~ ~ 0.85 0.4
@@ -30,13 +31,5 @@ execute if block ~ ~ ~ #minecraft:base_stone_nether run playsound minecraft:bloc
 execute if block ~ ~ ~ #minecraft:nylium run playsound minecraft:block.wart_block.break hostile @a ~ ~ ~ 0.85 0.6
 execute if block ~ ~ ~ minecraft:nether_bricks run playsound minecraft:block.nether_bricks.break hostile @a ~ ~ ~ 0.85 0.6
 execute if block ~ ~ ~ #minecraft:soul_fire_base_blocks run playsound minecraft:block.soul_sand.break hostile @a ~ ~ ~ 0.85 0.6
-
-# Containers
-execute if block ~ ~ ~ minecraft:chest run playsound minecraft:block.wood.break hostile @a ~ ~ ~ 0.85 0.6
-execute if block ~ ~ ~ minecraft:trapped_chest run playsound minecraft:block.wood.break hostile @a ~ ~ ~ 0.85 0.6
-execute if block ~ ~ ~ minecraft:ender_chest run playsound minecraft:block.ender_chest.open hostile @a ~ ~ ~ 0.85 0.4
-execute if block ~ ~ ~ minecraft:hopper run playsound minecraft:block.metal.break hostile @a ~ ~ ~ 0.85 0.6
-execute if block ~ ~ ~ minecraft:beacon run playsound minecraft:block.glass.break hostile @a ~ ~ ~ 0.85 0.4
-
 
 execute if block ~ ~ ~ minecraft:lava run playsound minecraft:block.lava.pop hostile @a ~ ~ ~ 0.85 0.6
