@@ -1,8 +1,7 @@
 ##by Tschipcraft
 
 # Preserve gamerule
-execute store result score $gamerule.tile_drops ts.sa.settings run gamerule doTileDrops
-execute if score $gamerule.tile_drops ts.sa.settings matches 1 run gamerule doTileDrops false
+function spawnanimations:internal/animation/dig_up/sound/tile_drops/disable
 
 # Preserve bedrock/air
 scoreboard players set $block ts.sa.settings 0
@@ -47,4 +46,4 @@ execute if score $play_unsupport ts.sa.settings matches 1..2 if score $block ts.
 execute unless score $block ts.sa.settings matches 0 run kill @e[type=minecraft:item,nbt={Age:0s},distance=..2]
 
 # Preserve gamerule
-execute if score $gamerule.tile_drops ts.sa.settings matches 1 run gamerule doTileDrops true
+function spawnanimations:internal/animation/dig_up/sound/tile_drops/enable

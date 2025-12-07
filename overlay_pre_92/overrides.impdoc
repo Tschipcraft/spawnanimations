@@ -1,0 +1,4 @@
+@targets 24w21a..25w43a
+@changes function calls
+ 
+- Old gamerule name `block_drops` -> `doTileDrops`
