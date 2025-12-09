@@ -43,5 +43,4 @@ execute if score $play_sounds ts.sa.settings matches 1..2 if score $play_unsuppo
 execute if score $play_sounds ts.sa.settings matches 1..2 if score $play_unsupport ts.sa.settings matches 2 run tellraw @s [{"text":"Play Animation on Unsupported Blocks   [>✔<]  |  [❌]","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]
 execute if score $play_sounds ts.sa.settings matches -1..0 run tellraw @s [{"text":"Play Animation on Unsupported Blocks   [✔]  |  [>❌<]","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"Enable [Play Animation Sounds] first."}]}}]
 
-function spawnanimations:settings/hide_feedback/main
 playsound minecraft:block.dispenser.dispense master @s ~ ~ ~ 0.2 2

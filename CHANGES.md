@@ -1,2 +1,4 @@
-- **Added support for Minecraft 1.21.10** 🧩
-- Fixed dig up animation particles no longer appearing in Minecraft 1.20.6 and below
+- **Added support for Minecraft 1.21.11** 🐎
+  - Updated to work with the new gamerule names
+  - Removed broken hide feedback code for 1.21+
+  - Bumped pack format and protocol version
