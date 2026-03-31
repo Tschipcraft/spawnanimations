@@ -3,7 +3,7 @@
 # Sand
 execute if block ~ ~ ~ #minecraft:sand run particle block{block_state:"minecraft:sand"} ~ ~1 ~ 1.5 0 1.5 1 30 normal
 # Dirt
-execute if block ~ ~ ~ #minecraft:bamboo_plantable_on unless block ~ ~ ~ #minecraft:sand run particle block{block_state:"minecraft:dirt"} ~ ~1 ~ 1.5 0 1.5 1 30 normal
+execute if block ~ ~ ~ #spawnanimations:dirt unless block ~ ~ ~ #minecraft:sand run particle block{block_state:"minecraft:dirt"} ~ ~1 ~ 1.5 0 1.5 1 30 normal
 # Wood
 execute if block ~ ~ ~ #minecraft:planks run particle block{block_state:"minecraft:oak_planks"} ~ ~1 ~ 1.5 0 1.5 1 30 normal
 execute if block ~ ~ ~ #minecraft:logs run particle block{block_state:"minecraft:oak_log"} ~ ~1 ~ 1.5 0 1.5 1 30 normal

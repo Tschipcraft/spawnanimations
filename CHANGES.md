@@ -1,2 +1,3 @@
 - **Added support for Minecraft 26.1** 🐤
+  - Migrated `#bamboo_plantable_on` references to `#supports_vegetation`
   - Bumped pack format and protocol version
