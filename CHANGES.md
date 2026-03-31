@@ -1,4 +1,2 @@
-- **Added support for Minecraft 1.21.11** 🐎
-  - Updated to work with the new gamerule names
-  - Removed broken hide feedback code for 1.21+
+- **Added support for Minecraft 26.1** 🐤
   - Bumped pack format and protocol version
