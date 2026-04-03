@@ -1,10 +1,10 @@
 package net.tschipcraft.spawnanimations.fabric;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.ServerCommandSource;
 
-public class sendConfig {
+public class sendConfigObf {
 
     public static void sendConfig(MinecraftServer server) {
         sendCommand("scoreboard objectives add ts.sa.settings dummy", server);
@@ -76,9 +76,9 @@ public class sendConfig {
     }
 
     public static void sendCommand(String command, MinecraftServer server) {
-        CommandSourceStack commandSource = server.createCommandSourceStack();
+        ServerCommandSource commandSource = server.getCommandSource();
         try {
-            server.getCommands().getDispatcher().execute(command, commandSource);
+            server.getCommandManager().getDispatcher().execute(command, commandSource);
         } catch (CommandSyntaxException ignored) {
         }
     }

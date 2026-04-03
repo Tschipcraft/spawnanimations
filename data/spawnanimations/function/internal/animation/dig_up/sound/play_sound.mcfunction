@@ -4,7 +4,8 @@
 execute if block ~ ~ ~ #minecraft:sand run playsound minecraft:block.sand.break hostile @a ~ ~ ~ 0.85 0.6
 execute if block ~ ~ ~ sandstone run playsound minecraft:block.stone.break hostile @a ~ ~ ~ 0.85 0.6
 # Dirt
-execute if block ~ ~ ~ #minecraft:bamboo_plantable_on unless block ~ ~ ~ #minecraft:sand unless block ~ ~0.2 ~ minecraft:snow run playsound minecraft:block.gravel.break hostile @a ~ ~ ~ 0.85 0.6
+execute if block ~ ~ ~ #spawnanimations:dirt unless block ~ ~ ~ #minecraft:sand unless block ~ ~0.2 ~ minecraft:snow run playsound minecraft:block.gravel.break hostile @a ~ ~ ~ 0.85 0.6
+execute if block ~ ~ ~ minecraft:gravel unless block ~ ~ ~ #spawnanimations:dirt unless block ~ ~0.2 ~ minecraft:snow run playsound minecraft:block.gravel.break hostile @a ~ ~ ~ 0.85 0.6
 # Wood
 execute if block ~ ~ ~ #minecraft:planks run playsound minecraft:block.wood.break hostile @a ~ ~ ~ 0.85 0.6
 execute if block ~ ~ ~ #minecraft:logs run playsound minecraft:block.wood.break hostile @a ~ ~ ~ 0.85 0.6

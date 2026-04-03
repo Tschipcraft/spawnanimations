@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    {"id": "#minecraft:bamboo_plantable_on", "required": false},
+    {"id": "#minecraft:supports_vegetation", "required": false}
+  ]
+}

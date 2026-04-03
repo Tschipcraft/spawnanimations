@@ -6,7 +6,7 @@ execute if block ~ ~ ~ #minecraft:sand unless block ~ ~ ~ minecraft:red_sand run
 execute if block ~ ~ ~ minecraft:red_sand run particle block{block_state:"minecraft:red_sand"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ minecraft:sandstone run particle block{block_state:"minecraft:sandstone"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 # Dirt
-execute if block ~ ~ ~ #minecraft:bamboo_plantable_on unless block ~ ~ ~ #minecraft:sand unless block ~ ~0.2 ~ minecraft:gravel run particle block{block_state:"minecraft:dirt"} ~ ~ ~ 0.1 0 0.1 1 9 normal
+execute if block ~ ~ ~ #spawnanimations:dirt unless block ~ ~ ~ #minecraft:sand unless block ~ ~0.2 ~ minecraft:gravel run particle block{block_state:"minecraft:dirt"} ~ ~ ~ 0.1 0 0.1 1 9 normal
 # Wood
 execute if block ~ ~ ~ #minecraft:planks run particle block{block_state:"minecraft:oak_planks"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal
 execute if block ~ ~ ~ #minecraft:logs run particle block{block_state:"minecraft:oak_log"} ~ ~0.2 ~ 0.1 0 0.1 1 9 normal

@@ -3,7 +3,7 @@
   "values": [
     "#minecraft:sand",
     "minecraft:sandstone",
-    "#minecraft:bamboo_plantable_on",
+    "#spawnanimations:dirt",
     "#minecraft:planks",
     "#minecraft:logs",
     "#minecraft:leaves",
