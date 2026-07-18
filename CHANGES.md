@@ -1,2 +1,1 @@
-- **Added support for Minecraft 26.2.x** ♨️
-  - Bumped pack format and protocol version
+- Added Russian language support (Thanks @itsrec0very, [#60](https://github.com/Tschipcraft/spawnanimations/pull/60))

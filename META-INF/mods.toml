@@ -18,6 +18,7 @@ This data pack is designed to be as unintrusive as possible. Hidden entities inc
 Execute the command §o/function §ospawnanimations:settings§r for a world-specific settings menu and/or install MidnightLib for global settings across all worlds.
 '''
 authors="Tschipcraft"
+credits="Fyoncle, sa-shiro, itsrec0very"
 displayURL="https://modrinth.com/mod/zrzYrlm0"
 issueTrackerURL="https://github.com/Tschipcraft/spawnanimations/issues"
 updateJSONURL="https://api.modrinth.com/updates/zrzYrlm0/forge_updates.json?forge=only"
