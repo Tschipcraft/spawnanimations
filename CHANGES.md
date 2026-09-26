@@ -1,3 +1,4 @@
 - **Added support for Minecraft 26.3.x** 🌲
   - Bumped pack format and protocol version
+- Fixed the menu opening when its advancement is granted by other means, such as `/advancement grant @s everything`
 - Added Russian language support (Thanks @itsrec0very, [#60](https://github.com/Tschipcraft/spawnanimations/pull/60))
