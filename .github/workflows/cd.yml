@@ -8,7 +8,7 @@ on:
         required: true
         default: '1.0'
       mc_upper:
-        description: 'Upper bound of Minecraft version range (exact version), e.g. "26.2". Leave empty to use the latest version from pack.mcmeta.'
+        description: 'Upper bound of Minecraft version range (exact version), e.g. "26.3". Leave empty to use the latest version from pack.mcmeta.'
         required: false
       mc_lower:
         description: 'Lower bound of Minecraft version range (exact version), e.g. "1.17"'
@@ -330,6 +330,7 @@ jobs:
           changelog-file: CHANGES.md
 
           dependencies: |
+            spawn-animations-compats-dp(optional){curseforge:1577366}
             pehkui(optional){curseforge:319596}
           loaders: |
             datapack
@@ -352,6 +353,7 @@ jobs:
           changelog-file: CHANGES.md
 
           dependencies: |
+            spawn-animations-compats(optional){curseforge:1577387}
             catalogue(optional){curseforge:459701}
             midnightlib(optional){curseforge:488090}
             pehkui(optional){curseforge:319596}
