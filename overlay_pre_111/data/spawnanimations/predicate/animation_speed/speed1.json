@@ -1,9 +1,9 @@
 {
-  "type": "minecraft:entity_properties",
+  "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
     "effects": {
-      "minecraft:slowness": {
+      "minecraft:speed": {
         "amplifier": 1
       }
     }

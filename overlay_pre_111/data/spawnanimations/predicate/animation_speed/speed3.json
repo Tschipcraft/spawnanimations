@@ -1,12 +1,10 @@
 {
-  "type": "minecraft:entity_properties",
+  "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
     "effects": {
       "minecraft:speed": {
-        "amplifier": {
-          "min": 5
-        }
+        "amplifier": 3
       }
     }
   }

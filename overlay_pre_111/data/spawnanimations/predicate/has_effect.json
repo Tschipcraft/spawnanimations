@@ -1,0 +1,35 @@
+[
+  {
+    "//comment": "This predicate checks if an entity has an effect that could impair Spawn Animations (returns false if the entity should be excluded)",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "effects": {
+          "minecraft:glowing": {
+            "duration": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "effects": {
+          "minecraft:levitation": {
+            "duration": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  }
+]

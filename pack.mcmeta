@@ -28,6 +28,12 @@
         "directory": "overlay_39"
       },
       {
+        "formats": [45,110],
+        "min_format": 45,
+        "max_format": 110,
+        "directory": "overlay_pre_111"
+      },
+      {
         "formats": [45,48],
         "min_format": 45,
         "max_format": 48,
