@@ -40,7 +40,7 @@ execute positioned ~ ~ ~ if entity @s[type=#spawnanimations:particles/nether_mob
 execute positioned ~ ~ ~ if entity @s[type=#spawnanimations:particles/end_mob] run particle dragon_breath ~ ~0.2 ~ 0.1 0 0.1 0.01 5 normal
 
 execute positioned ~ ~ ~ if entity @s[type=minecraft:slime] run particle block{block_state:"minecraft:slime_block"} ~ ~0.2 ~ 0.1 0 0.1 0.01 5 normal
-execute positioned ~ ~ ~ if entity @s[type=minecraft:magma_cube] run particle item{item:"magma_cream"} ~ ~0.2 ~ 0.1 0 0.1 0.01 5 normal
+execute positioned ~ ~ ~ if entity @s[type=minecraft:magma_cube] run particle item{item:"minecraft:magma_cream"} ~ ~0.2 ~ 0.1 0 0.1 0.01 5 normal
 
 
 ## Particles for the giant

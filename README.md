@@ -9,7 +9,7 @@
   <a href="https://github.com/Tschipcraft/spawnanimations/releases/latest"><img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/Tschipcraft/spawnanimations/total?logo=github&colorA=151513&colorB=e3e1ce&style=for-the-badge"></a>
 </p>
 
-> A data pack/mod for Minecraft 1.14.x-26.2.x
+> A data pack/mod for Minecraft 1.14.x-26.3.x
 
 ## Features
 

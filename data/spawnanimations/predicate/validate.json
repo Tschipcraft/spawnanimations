@@ -1,11 +1,8 @@
-[
-  {
-    "//comment": "This predicate checks if hidden mobs meet the right data format for storing/restoring worn/held items",
-    "condition": "minecraft:reference",
-    "name": "spawnanimations:validate/save_format"
-  },
-  {
-    "condition": "minecraft:reference",
-    "name": "spawnanimations:validate/hidden"
-  }
-]
+{
+  "//comment": "This predicate checks if hidden mobs meet the right data format for storing/restoring worn/held items",
+  "type": "minecraft:all_of",
+  "terms": [
+    "spawnanimations:validate/save_format",
+    "spawnanimations:validate/hidden"
+  ]
+}

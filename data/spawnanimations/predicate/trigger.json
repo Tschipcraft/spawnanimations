@@ -1,35 +1,23 @@
-[
-  {
-    "//comment": "A entity that suddenly matches any of these predicates will play the animation (returns false if triggered)",
-    "condition": "minecraft:reference",
-    "name": "spawnanimations:has_effect"
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "spawnanimations:is_on_fire"
+{
+  "//comment": "A entity that suddenly matches any of these predicates will play the animation (returns false if triggered)",
+  "type": "minecraft:all_of",
+  "terms": [
+    "spawnanimations:has_effect",
+    {
+      "type": "minecraft:inverted",
+      "term": "spawnanimations:is_on_fire"
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": "spawnanimations:attacking"
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": "spawnanimations:is_riding"
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": "spawnanimations:has_passengers"
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "spawnanimations:attacking"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "spawnanimations:is_riding"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "spawnanimations:has_passengers"
-    }
-  }
-]
+  ]
+}

@@ -1,0 +1,7 @@
+@targets 24w21a..26.3-snapshot-3
+@changes predicates and advancements
+ 
+- Old loot condition format: type discriminator is `condition`, not `type`
+- A list is a valid shorthand for `minecraft:all_of`
+- `minecraft:reference` is needed to point at another predicate by ID
+- Advancement `player` takes a list of conditions instead of a single predicate
